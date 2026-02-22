@@ -233,8 +233,8 @@ def build_cache_from_json(
 
 if __name__ == "__main__":
     # ---- EDIT THESE PATHS ----
-    seizure_only_json = "eeg_seizure_only.json"   # your seizure-only JSON
-    cache_dir = "cache_windows"                   # output folder
+    seizure_only_json = "assets/eeg_seizure_only_eval.json"   # your seizure-only JSON
+    cache_dir = "cache_windows_eval"                   # output folder
 
     # ---- CACHE SETTINGS ----
     manifest = build_cache_from_json(

@@ -171,7 +171,7 @@ def csv_has_seizure(csv_path: str | Path) -> bool:
 
 
 dataset = TUHZDataset(
-    r"D:\EEG_DATA\tuh_train\train", allowed_montages=None
+    r"D:\EEG_DATA\tuh_train", allowed_montages=None
 )  # We can use allowed montages only as follows if needed {"03_tcp_ar_a", "02_tcp_le"} ما بعرف اذا بتفيد بس عمومًا موجودة
 dataset.to_json("tuh_train_index.json")
 with open('tuh_train_index.json', 'r') as f:
