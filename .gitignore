@@ -7,3 +7,4 @@ cache_windows
 assets
 __pycache__
 .pth
+.csv
