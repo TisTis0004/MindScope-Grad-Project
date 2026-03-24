@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 import torch
 
-CACHE_DIR = Path("cache_windows") # path to the data folder
+CACHE_DIR = Path("cache_windows_eval") # path to the data folder
 MANIFEST = CACHE_DIR / "manifest.jsonl" # by defualt it should be there but if u move adjust this 
 
 with MANIFEST.open("w", encoding="utf-8") as mf:
