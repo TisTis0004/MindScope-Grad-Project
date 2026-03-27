@@ -3,6 +3,7 @@ visulization resnet18
 runs
 checkpoints
 cache_windows_eval
+cache_windows_eval_8_classes
 cache_windows
 assets
 __pycache__
