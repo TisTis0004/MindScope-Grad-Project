@@ -10,6 +10,25 @@ import torch
 import mne
 
 
+GROUP_MAP = {
+    "bckg": "background",
+
+    # focal
+    "fnsz": "focal",
+    "spsz": "focal",
+
+    # complex
+    "cpsz": "complex",
+
+    # generalized
+    "absz": "generalized",
+    "gnsz": "generalized",
+    "mysz": "generalized",
+    "tcsz": "generalized",
+    "tnsz": "generalized",
+}
+
+
 def read_label_intervals_from_csv(csv_path: str | Path):
     csv_path = Path(csv_path)
     if not csv_path.exists():
@@ -44,15 +63,18 @@ def get_window_label(ws, we, intervals, default="bckg"):
             overlap_by_label[lab] = overlap_by_label.get(lab, 0.0) + overlap
 
     if not overlap_by_label:
-        return default
+        raw_label = default
+    else:
+        raw_label = max(overlap_by_label.items(), key=lambda x: x[1])[0]
 
-    return max(overlap_by_label.items(), key=lambda x: x[1])[0]
+    if raw_label not in GROUP_MAP:
+        print(f"[WARN] unknown raw label: {raw_label}, using background")
+        return "background"
 
-
+    return GROUP_MAP[raw_label]
 
 
 def load_label_vocab(label_map_path: str | Path):
-    print(type(label_map_path), label_map_path)
     label_map_path = Path(label_map_path)
 
     with label_map_path.open("r", encoding="utf-8") as f:
@@ -64,38 +86,8 @@ def load_label_vocab(label_map_path: str | Path):
     return label_to_id, id_to_label
 
 
-def build_label_vocab(records):
-    labels = set()
-
-    for rec in records:
-        csv_path = Path(rec["csv_path"])
-        if not csv_path.exists():
-            continue
-
-        df = pd.read_csv(
-            csv_path,
-            comment="#",
-            usecols=["label"],
-            dtype={"label": str},
-        )
-
-        labs = (
-            df["label"]
-            .astype(str)
-            .str.strip()
-            .str.lower()
-            .dropna()
-            .unique()
-            .tolist()
-        )
-        labels.update(labs)
-
-    labels = sorted(labels)
-
-    if "bckg" in labels:
-        labels.remove("bckg")
-        labels = ["bckg"] + labels
-
+def build_label_vocab(records=None):
+    labels = ["background", "focal", "generalized", "complex"]
     label_to_id = {lab: i for i, lab in enumerate(labels)}
     id_to_label = {i: lab for lab, i in label_to_id.items()}
     return label_to_id, id_to_label
@@ -188,7 +180,7 @@ def cache_one_record_windows(
         label = get_window_label(ws, we, label_intervals, default="bckg")
 
         if label not in label_to_id:
-            print(f"[SKIP] unknown label '{label}' in {csv_path}")
+            print(f"[SKIP] unknown grouped label '{label}' in {csv_path}")
             continue
 
         y = label_to_id[label]
@@ -222,6 +214,7 @@ def cache_one_record_windows(
                 "c_max": c_max,
                 "label_to_id": label_to_id,
                 "id_to_label": {v: k for k, v in label_to_id.items()},
+                "group_map": GROUP_MAP,
             },
         },
         out_path,
@@ -239,7 +232,7 @@ def build_cache_from_json(
     c_max: int = 41,
     max_records: Optional[int] = None,
     max_windows_per_record: Optional[int] = None,
-     label_map_path: Optional[str | Path] = None,
+    label_map_path: Optional[str | Path] = None,
 ) -> Path:
     json_path = Path(json_path)
     out_dir = Path(out_dir)
@@ -250,19 +243,15 @@ def build_cache_from_json(
 
     if max_records is not None:
         records = records[:max_records]
-    
-    if  label_map_path is not None :
 
+    if label_map_path is not None:
         label_to_id, id_to_label = load_label_vocab(label_map_path)
-        print(f"Loaded label map from: {label_map_path}")
-    
-    else :
+        print(f"Loaded grouped label map from: {label_map_path}")
+    else:
         label_to_id, id_to_label = build_label_vocab(records)
-        print("Built label map from current records")
-        
-        
+        print("Built grouped label map")
 
-    print("Global label mapping:")
+    print("Global grouped label mapping:")
     for lab, idx in label_to_id.items():
         print(f"  {lab} -> {idx}")
 
@@ -307,14 +296,14 @@ def build_cache_from_json(
 
 if __name__ == "__main__":
     manifest = build_cache_from_json(
-        json_path=r"..\assets\eeg_seizure_only_eval.json",
-        out_dir=r"..\cache_windows_eval_8_classes",
-        label_map_path=r"..\assets\label_map.json",
+        json_path=r"..\assets\eeg_seizure_only.json",
+        out_dir=r"..\cache_windows",
         fs=250,
         window_sec=10.0,
         stride_sec=5.0,
         c_max=41,
         max_records=None,
         max_windows_per_record=None,
+        label_map_path=None,
     )
     print(manifest)
