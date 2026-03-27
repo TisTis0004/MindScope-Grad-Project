@@ -15,6 +15,7 @@ class PTStreamWindowsDataset(Dataset):
       y: [N]
     Loads only one pt file at a time (last-file cache).
     """
+
     def __init__(self, manifest_path: Path | str, transform=None):
         self.transform = transform
         manifest_path = Path(manifest_path)
@@ -51,7 +52,7 @@ class PTStreamWindowsDataset(Dataset):
             self._last_data = torch.load(self.items[fi][0], map_location="cpu")
             self._last_fi = fi
 
-        x = self._last_data["x"][li]         # [C, T]
+        x = self._last_data["x"][li]  # [C, T]
         y = self._last_data["y"][li].long()  # class index for CrossEntropyLoss
 
         if self.transform is not None:
@@ -92,3 +93,20 @@ class Loader:
 
     def return_Loader(self):
         return self.dl
+
+
+if __name__ == "__main__":
+    ds = PTStreamWindowsDataset(
+        "cache_windows_train_8_classes/manifest.jsonl", transform=None
+    )
+
+    for i in range(len(ds)):
+        print(ds[i]["y"]) if ds[i]["y"].item() != 0 else 0
+
+    # sample = ds[10]["x"]
+    # label = ds[10]["y"]
+    # print(sample)
+    # print("=" * 20)
+    # print(label)
+    # print("=" * 20)
+    # print(sample.shape)

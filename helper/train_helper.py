@@ -3,6 +3,10 @@ import csv
 from collections import Counter
 from pathlib import Path
 import sys
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 import numpy as np
 import torch
@@ -30,10 +34,11 @@ NUM_CLASSES = 9
 EPOCHS = 30
 LR = 1e-3
 PATIENCE = 10
-MONITOR = "f1_macro"   # options: val_loss, accuracy, f1_macro, balanced_accuracy, auc
+MONITOR = "f1_macro"  # options: val_loss, accuracy, f1_macro, balanced_accuracy, auc
 CHECKPOINT_PATH = "best_model_checkpoint.pt"
 HISTORY_CSV_PATH = "training_history.csv"
-SEED = 20200220
+SEED = os.getenv("SEED_1")
+print(SEED)
 
 TRAIN_MANIFEST = None
 VAL_MANIFEST = "cache_windows_eval_8_classes/manifest.jsonl"
@@ -52,7 +57,9 @@ def is_better(current, best, mode="max"):
     return current > best if mode == "max" else current < best
 
 
-def compute_classification_metrics(y_true, y_pred, y_prob=None, num_classes=None, topk=2):
+def compute_classification_metrics(
+    y_true, y_pred, y_prob=None, num_classes=None, topk=2
+):
     metrics = {}
 
     metrics["accuracy"] = accuracy_score(y_true, y_pred)
@@ -61,8 +68,10 @@ def compute_classification_metrics(y_true, y_pred, y_prob=None, num_classes=None
     precision_macro, recall_macro, f1_macro, _ = precision_recall_fscore_support(
         y_true, y_pred, average="macro", zero_division=0
     )
-    precision_weighted, recall_weighted, f1_weighted, _ = precision_recall_fscore_support(
-        y_true, y_pred, average="weighted", zero_division=0
+    precision_weighted, recall_weighted, f1_weighted, _ = (
+        precision_recall_fscore_support(
+            y_true, y_pred, average="weighted", zero_division=0
+        )
     )
 
     metrics["precision_macro"] = precision_macro
@@ -103,7 +112,7 @@ def compute_classification_metrics(y_true, y_pred, y_prob=None, num_classes=None
     metrics["confusion_matrix"] = confusion_matrix(
         y_true,
         y_pred,
-        labels=np.arange(num_classes) if num_classes is not None else None
+        labels=np.arange(num_classes) if num_classes is not None else None,
     )
 
     return metrics
@@ -159,8 +168,7 @@ def get_loader_counts(loader):
 
 def get_class_weights(device):
     counts = torch.tensor(
-        [118873, 89, 1376, 4125, 8204, 256, 266, 352, 69],
-        dtype=torch.float
+        [118873, 89, 1376, 4125, 8204, 256, 266, 352, 69], dtype=torch.float
     )
     weights = counts.sum() / (counts + 1e-6)
     weights = weights / weights.mean()
@@ -170,15 +178,22 @@ def get_class_weights(device):
 def build_training_components(model, device):
     criterion = nn.CrossEntropyLoss(weight=get_class_weights(device))
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=1e-2)
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-        optimizer,
-        T_max=EPOCHS
-    )
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=EPOCHS)
     scaler = torch.amp.GradScaler("cuda", enabled=(device.type == "cuda"))
     return criterion, optimizer, scheduler, scaler
 
 
-def train_one_epoch(model, loader, optimizer, criterion, scaler, device, use_amp=True, num_classes=2, topk=2):
+def train_one_epoch(
+    model,
+    loader,
+    optimizer,
+    criterion,
+    scaler,
+    device,
+    use_amp=True,
+    num_classes=2,
+    topk=2,
+):
     model.train()
 
     total_loss = 0.0
@@ -218,13 +233,17 @@ def train_one_epoch(model, loader, optimizer, criterion, scaler, device, use_amp
         all_probs.append(probs.detach().cpu())
 
         running_loss = total_loss / total_samples
-        running_acc = (torch.cat(all_preds) == torch.cat(all_targets)).float().mean().item()
+        running_acc = (
+            (torch.cat(all_preds) == torch.cat(all_targets)).float().mean().item()
+        )
 
-        pbar.set_postfix({
-            "loss": f"{running_loss:.4f}",
-            "acc": f"{running_acc:.4f}",
-            "lr": f"{get_current_lr(optimizer):.2e}",
-        })
+        pbar.set_postfix(
+            {
+                "loss": f"{running_loss:.4f}",
+                "acc": f"{running_acc:.4f}",
+                "lr": f"{get_current_lr(optimizer):.2e}",
+            }
+        )
 
     y_true = torch.cat(all_targets).numpy()
     y_pred = torch.cat(all_preds).numpy()
@@ -243,7 +262,9 @@ def train_one_epoch(model, loader, optimizer, criterion, scaler, device, use_amp
 
 
 @torch.no_grad()
-def evaluate(model, loader, criterion, device, use_amp=True, num_classes=2, topk=2, desc="Eval"):
+def evaluate(
+    model, loader, criterion, device, use_amp=True, num_classes=2, topk=2, desc="Eval"
+):
     model.eval()
 
     total_loss = 0.0
@@ -352,13 +373,26 @@ def build_epoch_message(epoch, total_epochs, log_row, train_metrics, val_metrics
     if "auc" in val_metrics and not np.isnan(val_metrics["auc"]):
         msg += f" | Val AUC {val_metrics['auc']:.4f}"
 
-    if f"top{topk}_accuracy" in val_metrics and not np.isnan(val_metrics[f"top{topk}_accuracy"]):
+    if f"top{topk}_accuracy" in val_metrics and not np.isnan(
+        val_metrics[f"top{topk}_accuracy"]
+    ):
         msg += f" | Val Top{topk} {val_metrics[f'top{topk}_accuracy']:.4f}"
 
     return msg
 
 
-def make_checkpoint(epoch, model, optimizer, scheduler, scaler, best_metric, train_metrics, val_metrics, history, use_amp):
+def make_checkpoint(
+    epoch,
+    model,
+    optimizer,
+    scheduler,
+    scaler,
+    best_metric,
+    train_metrics,
+    val_metrics,
+    history,
+    use_amp,
+):
     return {
         "epoch": epoch + 1,
         "model_state_dict": copy.deepcopy(model.state_dict()),
