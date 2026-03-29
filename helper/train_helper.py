@@ -26,17 +26,17 @@ from data.dataloader import Loader  # noqa: E402
 # =========================================================
 # CONFIG
 # =========================================================
-NUM_CLASSES = 9
+NUM_CLASSES = 4
 EPOCHS = 30
 LR = 1e-3
 PATIENCE = 10
 MONITOR = "f1_macro"   # options: val_loss, accuracy, f1_macro, balanced_accuracy, auc
-CHECKPOINT_PATH = "best_model_checkpoint.pt"
-HISTORY_CSV_PATH = "training_history.csv"
+CHECKPOINT_PATH = 'checkpoints/eeg_4_classes.pt'
+HISTORY_CSV_PATH = 'assets/eegnet_history.csv'
 SEED = 20200220
 
-TRAIN_MANIFEST = None
-VAL_MANIFEST = "cache_windows_eval_8_classes/manifest.jsonl"
+TRAIN_MANIFEST = 'cahce_windows/manifest.jsonl'
+VAL_MANIFEST = "cache_windows_eval/manifest.jsonl"
 
 
 # =========================================================
@@ -156,19 +156,16 @@ def get_loader_counts(loader):
         counts.update(map(int, y))
     return dict(sorted(counts.items()))
 
-
+#for 9 classes or to make the training not biased for the bcgz
 def get_class_weights(device):
-    counts = torch.tensor(
-        [118873, 89, 1376, 4125, 8204, 256, 266, 352, 69],
-        dtype=torch.float
-    )
-    weights = counts.sum() / (counts + 1e-6)
+    counts = torch.tensor([118873, 4391, 8970, 1376], dtype=torch.float)
+    weights = counts.sum() / (len(counts) * counts)
     weights = weights / weights.mean()
     return weights.to(device)
 
 
 def build_training_components(model, device):
-    criterion = nn.CrossEntropyLoss(weight=get_class_weights(device))
+    criterion = nn.CrossEntropyLoss(weight = get_class_weights(device))
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=1e-2)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
         optimizer,

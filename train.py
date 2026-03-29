@@ -38,7 +38,7 @@ def main():
 
     set_random_seeds(seed=SEED, cuda=(device.type == "cuda"))
 
-    model = build_model(device, weights="best_model_checkpoint.pt")
+    model = build_model(device, weights = CHECKPOINT_PATH) # if u have any weights to use  
     criterion, optimizer, scheduler, scaler = build_training_components(model, device)
 
     transform = None
