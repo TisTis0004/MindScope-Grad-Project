@@ -3,8 +3,9 @@ import json
 from pathlib import Path
 from typing import List, Tuple
 
+import numpy as np
 import torch
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset, DataLoader, WeightedRandomSampler
 
 
 class PTStreamWindowsDataset(Dataset):
@@ -37,6 +38,13 @@ class PTStreamWindowsDataset(Dataset):
         for fi, (_, n) in enumerate(self.items):
             for li in range(n):
                 self.index.append((fi, li))
+
+        # Load labels once so sampler can use them
+        self.labels = []
+        for path, _ in self.items:
+            data = torch.load(path, map_location="cpu")
+            ys = data["y"].long()
+            self.labels.extend(ys.tolist())
 
         self._last_fi = None
         self._last_data = None
@@ -76,15 +84,35 @@ class Loader:
         num_workers=2,
         pin_memory=False,
         collate_fn=collate_xy,
+        use_weighted_sampler=False,
     ):
         ds = PTStreamWindowsDataset(ds, transform)
-        for i in range(10):
+
+        for i in range(min(10, len(ds))):
             s = ds[i]
             print(i, s["y"].item(), s["y"].dtype)
+
+        sampler = None
+        if use_weighted_sampler:
+            labels = np.array(ds.labels)
+
+            class_counts = np.bincount(labels)
+            print("Class counts:", class_counts)
+
+            class_weights = 1.0 / class_counts
+            sample_weights = class_weights[labels]
+
+            sampler = WeightedRandomSampler(
+                weights=torch.DoubleTensor(sample_weights),
+                num_samples=len(sample_weights),
+                replacement=True,
+            )
+
         self.dl = DataLoader(
             ds,
             batch_size=batch_size,
-            shuffle=shuffle,
+            shuffle=(shuffle if sampler is None else False),
+            sampler=sampler,
             num_workers=num_workers,
             pin_memory=pin_memory,
             collate_fn=collate_fn,

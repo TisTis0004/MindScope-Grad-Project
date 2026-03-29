@@ -296,8 +296,8 @@ def build_cache_from_json(
 
 if __name__ == "__main__":
     manifest = build_cache_from_json(
-        json_path=r"..\assets\eeg_seizure_only.json",
-        out_dir=r"..\cache_windows",
+        json_path=r"..\assets\eeg_seizure_only_eval.json",
+        out_dir=r"..\cache_windows_eval",
         fs=250,
         window_sec=10.0,
         stride_sec=5.0,
