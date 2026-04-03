@@ -1,0 +1,1757 @@
+[
+  {
+    "stem": "aaaaaaaq_s006_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaaaq\\s006_2014\\01_tcp_ar\\aaaaaaaq_s006_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaaaq\\s006_2014\\01_tcp_ar\\aaaaaaaq_s006_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaaaq\\s006_2014\\01_tcp_ar\\aaaaaaaq_s006_t000.edf",
+    "subject": "aaaaaaaq",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaarq_s014_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s014_2014\\01_tcp_ar\\aaaaaarq_s014_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s014_2014\\01_tcp_ar\\aaaaaarq_s014_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s014_2014\\01_tcp_ar\\aaaaaarq_s014_t001.edf",
+    "subject": "aaaaaarq",
+    "session": "s014_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaarq_s014_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s014_2014\\01_tcp_ar\\aaaaaarq_s014_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s014_2014\\01_tcp_ar\\aaaaaarq_s014_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s014_2014\\01_tcp_ar\\aaaaaarq_s014_t005.edf",
+    "subject": "aaaaaarq",
+    "session": "s014_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaarq_s014_t009",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s014_2014\\01_tcp_ar\\aaaaaarq_s014_t009.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s014_2014\\01_tcp_ar\\aaaaaarq_s014_t009.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s014_2014\\01_tcp_ar\\aaaaaarq_s014_t009.edf",
+    "subject": "aaaaaarq",
+    "session": "s014_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaarq_s016_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s016_2014\\01_tcp_ar\\aaaaaarq_s016_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s016_2014\\01_tcp_ar\\aaaaaarq_s016_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s016_2014\\01_tcp_ar\\aaaaaarq_s016_t002.edf",
+    "subject": "aaaaaarq",
+    "session": "s016_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaarq_s016_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s016_2014\\01_tcp_ar\\aaaaaarq_s016_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s016_2014\\01_tcp_ar\\aaaaaarq_s016_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s016_2014\\01_tcp_ar\\aaaaaarq_s016_t003.edf",
+    "subject": "aaaaaarq",
+    "session": "s016_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaarq_s016_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s016_2014\\01_tcp_ar\\aaaaaarq_s016_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s016_2014\\01_tcp_ar\\aaaaaarq_s016_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s016_2014\\01_tcp_ar\\aaaaaarq_s016_t007.edf",
+    "subject": "aaaaaarq",
+    "session": "s016_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaarq_s017_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s017_2014\\01_tcp_ar\\aaaaaarq_s017_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s017_2014\\01_tcp_ar\\aaaaaarq_s017_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s017_2014\\01_tcp_ar\\aaaaaarq_s017_t000.edf",
+    "subject": "aaaaaarq",
+    "session": "s017_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaarq_s017_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s017_2014\\01_tcp_ar\\aaaaaarq_s017_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s017_2014\\01_tcp_ar\\aaaaaarq_s017_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s017_2014\\01_tcp_ar\\aaaaaarq_s017_t001.edf",
+    "subject": "aaaaaarq",
+    "session": "s017_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaarq_s017_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s017_2014\\01_tcp_ar\\aaaaaarq_s017_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s017_2014\\01_tcp_ar\\aaaaaarq_s017_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaarq\\s017_2014\\01_tcp_ar\\aaaaaarq_s017_t005.edf",
+    "subject": "aaaaaarq",
+    "session": "s017_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaefp_s007_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaefp\\s007_2014\\01_tcp_ar\\aaaaaefp_s007_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaefp\\s007_2014\\01_tcp_ar\\aaaaaefp_s007_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaefp\\s007_2014\\01_tcp_ar\\aaaaaefp_s007_t001.edf",
+    "subject": "aaaaaefp",
+    "session": "s007_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaafcf_s009_t009",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaafcf\\s009_2014\\01_tcp_ar\\aaaaafcf_s009_t009.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaafcf\\s009_2014\\01_tcp_ar\\aaaaafcf_s009_t009.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaafcf\\s009_2014\\01_tcp_ar\\aaaaafcf_s009_t009.edf",
+    "subject": "aaaaafcf",
+    "session": "s009_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaghb_s010_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t000.edf",
+    "subject": "aaaaaghb",
+    "session": "s010_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaghb_s010_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t001.edf",
+    "subject": "aaaaaghb",
+    "session": "s010_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaghb_s010_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t002.edf",
+    "subject": "aaaaaghb",
+    "session": "s010_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaghb_s010_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t003.edf",
+    "subject": "aaaaaghb",
+    "session": "s010_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaghb_s010_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t004.edf",
+    "subject": "aaaaaghb",
+    "session": "s010_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaghb_s010_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t005.edf",
+    "subject": "aaaaaghb",
+    "session": "s010_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaghb_s010_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t006.edf",
+    "subject": "aaaaaghb",
+    "session": "s010_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaghb_s010_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaghb\\s010_2014\\01_tcp_ar\\aaaaaghb_s010_t007.edf",
+    "subject": "aaaaaghb",
+    "session": "s010_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaahlk_s006_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s006_2014\\01_tcp_ar\\aaaaahlk_s006_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s006_2014\\01_tcp_ar\\aaaaahlk_s006_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s006_2014\\01_tcp_ar\\aaaaahlk_s006_t002.edf",
+    "subject": "aaaaahlk",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaahlk_s006_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s006_2014\\01_tcp_ar\\aaaaahlk_s006_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s006_2014\\01_tcp_ar\\aaaaahlk_s006_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s006_2014\\01_tcp_ar\\aaaaahlk_s006_t007.edf",
+    "subject": "aaaaahlk",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaahlk_s006_t009",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s006_2014\\01_tcp_ar\\aaaaahlk_s006_t009.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s006_2014\\01_tcp_ar\\aaaaahlk_s006_t009.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s006_2014\\01_tcp_ar\\aaaaahlk_s006_t009.edf",
+    "subject": "aaaaahlk",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaahlk_s007_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s007_2014\\01_tcp_ar\\aaaaahlk_s007_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s007_2014\\01_tcp_ar\\aaaaahlk_s007_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahlk\\s007_2014\\01_tcp_ar\\aaaaahlk_s007_t006.edf",
+    "subject": "aaaaahlk",
+    "session": "s007_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaahsi_s011_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahsi\\s011_2014\\01_tcp_ar\\aaaaahsi_s011_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahsi\\s011_2014\\01_tcp_ar\\aaaaahsi_s011_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahsi\\s011_2014\\01_tcp_ar\\aaaaahsi_s011_t000.edf",
+    "subject": "aaaaahsi",
+    "session": "s011_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaahsi_s014_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahsi\\s014_2014\\01_tcp_ar\\aaaaahsi_s014_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahsi\\s014_2014\\01_tcp_ar\\aaaaahsi_s014_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaahsi\\s014_2014\\01_tcp_ar\\aaaaahsi_s014_t000.edf",
+    "subject": "aaaaahsi",
+    "session": "s014_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaiih_s003_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaiih\\s003_2015\\01_tcp_ar\\aaaaaiih_s003_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaiih\\s003_2015\\01_tcp_ar\\aaaaaiih_s003_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaiih\\s003_2015\\01_tcp_ar\\aaaaaiih_s003_t001.edf",
+    "subject": "aaaaaiih",
+    "session": "s003_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaiih_s006_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaiih\\s006_2015\\01_tcp_ar\\aaaaaiih_s006_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaiih\\s006_2015\\01_tcp_ar\\aaaaaiih_s006_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaiih\\s006_2015\\01_tcp_ar\\aaaaaiih_s006_t001.edf",
+    "subject": "aaaaaiih",
+    "session": "s006_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaijh_s006_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaijh\\s006_2014\\01_tcp_ar\\aaaaaijh_s006_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaijh\\s006_2014\\01_tcp_ar\\aaaaaijh_s006_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaijh\\s006_2014\\01_tcp_ar\\aaaaaijh_s006_t000.edf",
+    "subject": "aaaaaijh",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajdj_s004_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajdj\\s004_2014\\01_tcp_ar\\aaaaajdj_s004_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajdj\\s004_2014\\01_tcp_ar\\aaaaajdj_s004_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajdj\\s004_2014\\01_tcp_ar\\aaaaajdj_s004_t006.edf",
+    "subject": "aaaaajdj",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s028_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s028_2014\\01_tcp_ar\\aaaaajru_s028_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s028_2014\\01_tcp_ar\\aaaaajru_s028_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s028_2014\\01_tcp_ar\\aaaaajru_s028_t000.edf",
+    "subject": "aaaaajru",
+    "session": "s028_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s029_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t000.edf",
+    "subject": "aaaaajru",
+    "session": "s029_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s029_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t001.edf",
+    "subject": "aaaaajru",
+    "session": "s029_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s029_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t002.edf",
+    "subject": "aaaaajru",
+    "session": "s029_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s029_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t003.edf",
+    "subject": "aaaaajru",
+    "session": "s029_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s029_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t004.edf",
+    "subject": "aaaaajru",
+    "session": "s029_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s029_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t005.edf",
+    "subject": "aaaaajru",
+    "session": "s029_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s029_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s029_2014\\01_tcp_ar\\aaaaajru_s029_t006.edf",
+    "subject": "aaaaajru",
+    "session": "s029_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s031_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t000.edf",
+    "subject": "aaaaajru",
+    "session": "s031_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s031_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t001.edf",
+    "subject": "aaaaajru",
+    "session": "s031_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s031_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t002.edf",
+    "subject": "aaaaajru",
+    "session": "s031_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s031_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t003.edf",
+    "subject": "aaaaajru",
+    "session": "s031_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s031_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t004.edf",
+    "subject": "aaaaajru",
+    "session": "s031_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s031_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t005.edf",
+    "subject": "aaaaajru",
+    "session": "s031_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s031_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s031_2014\\01_tcp_ar\\aaaaajru_s031_t006.edf",
+    "subject": "aaaaajru",
+    "session": "s031_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s032_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t000.edf",
+    "subject": "aaaaajru",
+    "session": "s032_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s032_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t001.edf",
+    "subject": "aaaaajru",
+    "session": "s032_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s032_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t002.edf",
+    "subject": "aaaaajru",
+    "session": "s032_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s032_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t003.edf",
+    "subject": "aaaaajru",
+    "session": "s032_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s032_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s032_2014\\01_tcp_ar\\aaaaajru_s032_t004.edf",
+    "subject": "aaaaajru",
+    "session": "s032_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s038_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t005.edf",
+    "subject": "aaaaajru",
+    "session": "s038_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s038_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t006.edf",
+    "subject": "aaaaajru",
+    "session": "s038_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s038_t008",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t008.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t008.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t008.edf",
+    "subject": "aaaaajru",
+    "session": "s038_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s038_t010",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t010.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t010.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t010.edf",
+    "subject": "aaaaajru",
+    "session": "s038_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaajru_s038_t011",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t011.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t011.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaajru\\s038_2014\\01_tcp_ar\\aaaaajru_s038_t011.edf",
+    "subject": "aaaaajru",
+    "session": "s038_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaapli_s002_t013",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaapli\\s002_2014\\01_tcp_ar\\aaaaapli_s002_t013.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaapli\\s002_2014\\01_tcp_ar\\aaaaapli_s002_t013.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaapli\\s002_2014\\01_tcp_ar\\aaaaapli_s002_t013.edf",
+    "subject": "aaaaapli",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqek_s010_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqek\\s010_2015\\01_tcp_ar\\aaaaaqek_s010_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqek\\s010_2015\\01_tcp_ar\\aaaaaqek_s010_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqek\\s010_2015\\01_tcp_ar\\aaaaaqek_s010_t003.edf",
+    "subject": "aaaaaqek",
+    "session": "s010_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqek_s010_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqek\\s010_2015\\01_tcp_ar\\aaaaaqek_s010_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqek\\s010_2015\\01_tcp_ar\\aaaaaqek_s010_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqek\\s010_2015\\01_tcp_ar\\aaaaaqek_s010_t005.edf",
+    "subject": "aaaaaqek",
+    "session": "s010_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s001_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s001_2014\\01_tcp_ar\\aaaaaqld_s001_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s001_2014\\01_tcp_ar\\aaaaaqld_s001_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s001_2014\\01_tcp_ar\\aaaaaqld_s001_t000.edf",
+    "subject": "aaaaaqld",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s002_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s002_2014\\01_tcp_ar\\aaaaaqld_s002_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s002_2014\\01_tcp_ar\\aaaaaqld_s002_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s002_2014\\01_tcp_ar\\aaaaaqld_s002_t003.edf",
+    "subject": "aaaaaqld",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s002_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s002_2014\\01_tcp_ar\\aaaaaqld_s002_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s002_2014\\01_tcp_ar\\aaaaaqld_s002_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s002_2014\\01_tcp_ar\\aaaaaqld_s002_t004.edf",
+    "subject": "aaaaaqld",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s002_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s002_2014\\01_tcp_ar\\aaaaaqld_s002_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s002_2014\\01_tcp_ar\\aaaaaqld_s002_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s002_2014\\01_tcp_ar\\aaaaaqld_s002_t006.edf",
+    "subject": "aaaaaqld",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t002.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t004.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t005.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t006.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t009",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t009.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t009.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t009.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t010",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t010.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t010.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t010.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t011",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t011.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t011.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t011.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t012",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t012.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t012.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t012.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t013",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t013.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t013.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t013.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t015",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t015.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t015.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t015.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t016",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t016.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t016.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t016.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqld_s003_t018",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t018.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t018.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqld\\s003_2014\\01_tcp_ar\\aaaaaqld_s003_t018.edf",
+    "subject": "aaaaaqld",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqmo_s001_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqmo\\s001_2014\\01_tcp_ar\\aaaaaqmo_s001_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqmo\\s001_2014\\01_tcp_ar\\aaaaaqmo_s001_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqmo\\s001_2014\\01_tcp_ar\\aaaaaqmo_s001_t000.edf",
+    "subject": "aaaaaqmo",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqmo_s001_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqmo\\s001_2014\\01_tcp_ar\\aaaaaqmo_s001_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqmo\\s001_2014\\01_tcp_ar\\aaaaaqmo_s001_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqmo\\s001_2014\\01_tcp_ar\\aaaaaqmo_s001_t001.edf",
+    "subject": "aaaaaqmo",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s003_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s003_2014\\01_tcp_ar\\aaaaaqtq_s003_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s003_2014\\01_tcp_ar\\aaaaaqtq_s003_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s003_2014\\01_tcp_ar\\aaaaaqtq_s003_t000.edf",
+    "subject": "aaaaaqtq",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s003_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s003_2014\\01_tcp_ar\\aaaaaqtq_s003_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s003_2014\\01_tcp_ar\\aaaaaqtq_s003_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s003_2014\\01_tcp_ar\\aaaaaqtq_s003_t002.edf",
+    "subject": "aaaaaqtq",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s003_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s003_2014\\01_tcp_ar\\aaaaaqtq_s003_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s003_2014\\01_tcp_ar\\aaaaaqtq_s003_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s003_2014\\01_tcp_ar\\aaaaaqtq_s003_t004.edf",
+    "subject": "aaaaaqtq",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s006_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t000.edf",
+    "subject": "aaaaaqtq",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s006_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t001.edf",
+    "subject": "aaaaaqtq",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s006_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t002.edf",
+    "subject": "aaaaaqtq",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s006_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t003.edf",
+    "subject": "aaaaaqtq",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s006_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t004.edf",
+    "subject": "aaaaaqtq",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s006_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t005.edf",
+    "subject": "aaaaaqtq",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s006_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t007.edf",
+    "subject": "aaaaaqtq",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtq_s006_t008",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t008.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t008.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtq\\s006_2014\\01_tcp_ar\\aaaaaqtq_s006_t008.edf",
+    "subject": "aaaaaqtq",
+    "session": "s006_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s001_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s001_2014\\01_tcp_ar\\aaaaaqtw_s001_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s001_2014\\01_tcp_ar\\aaaaaqtw_s001_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s001_2014\\01_tcp_ar\\aaaaaqtw_s001_t000.edf",
+    "subject": "aaaaaqtw",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t000.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t001.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t002.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t003.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t004.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t005.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t007.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t010",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t010.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t010.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t010.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t011",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t011.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t011.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t011.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqtw_s002_t012",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t012.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t012.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqtw\\s002_2014\\01_tcp_ar\\aaaaaqtw_s002_t012.edf",
+    "subject": "aaaaaqtw",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaqvx_s002_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqvx\\s002_2015\\01_tcp_ar\\aaaaaqvx_s002_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqvx\\s002_2015\\01_tcp_ar\\aaaaaqvx_s002_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaqvx\\s002_2015\\01_tcp_ar\\aaaaaqvx_s002_t001.edf",
+    "subject": "aaaaaqvx",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaraf_s001_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaraf\\s001_2014\\01_tcp_ar\\aaaaaraf_s001_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaraf\\s001_2014\\01_tcp_ar\\aaaaaraf_s001_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaraf\\s001_2014\\01_tcp_ar\\aaaaaraf_s001_t000.edf",
+    "subject": "aaaaaraf",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaraf_s004_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaraf\\s004_2014\\01_tcp_ar\\aaaaaraf_s004_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaraf\\s004_2014\\01_tcp_ar\\aaaaaraf_s004_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaraf\\s004_2014\\01_tcp_ar\\aaaaaraf_s004_t000.edf",
+    "subject": "aaaaaraf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s001_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s001_2014\\01_tcp_ar\\aaaaardf_s001_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s001_2014\\01_tcp_ar\\aaaaardf_s001_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s001_2014\\01_tcp_ar\\aaaaardf_s001_t001.edf",
+    "subject": "aaaaardf",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s003_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s003_2014\\01_tcp_ar\\aaaaardf_s003_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s003_2014\\01_tcp_ar\\aaaaardf_s003_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s003_2014\\01_tcp_ar\\aaaaardf_s003_t000.edf",
+    "subject": "aaaaardf",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t000.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t001.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t002.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t004.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t005.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t006.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t007.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t008",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t008.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t008.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t008.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t010",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t010.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t010.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t010.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t011",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t011.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t011.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t011.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t012",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t012.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t012.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t012.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t013",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t013.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t013.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t013.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t014",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t014.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t014.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t014.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t015",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t015.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t015.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t015.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s004_t016",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t016.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t016.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s004_2014\\01_tcp_ar\\aaaaardf_s004_t016.edf",
+    "subject": "aaaaardf",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s005_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t001.edf",
+    "subject": "aaaaardf",
+    "session": "s005_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s005_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t002.edf",
+    "subject": "aaaaardf",
+    "session": "s005_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s005_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t003.edf",
+    "subject": "aaaaardf",
+    "session": "s005_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s005_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t004.edf",
+    "subject": "aaaaardf",
+    "session": "s005_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s005_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t005.edf",
+    "subject": "aaaaardf",
+    "session": "s005_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s005_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t006.edf",
+    "subject": "aaaaardf",
+    "session": "s005_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s005_t010",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t010.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t010.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t010.edf",
+    "subject": "aaaaardf",
+    "session": "s005_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaardf_s005_t011",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t011.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t011.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaardf\\s005_2014\\01_tcp_ar\\aaaaardf_s005_t011.edf",
+    "subject": "aaaaardf",
+    "session": "s005_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarei_s007_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarei\\s007_2015\\01_tcp_ar\\aaaaarei_s007_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarei\\s007_2015\\01_tcp_ar\\aaaaarei_s007_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarei\\s007_2015\\01_tcp_ar\\aaaaarei_s007_t000.edf",
+    "subject": "aaaaarei",
+    "session": "s007_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarjc_s010_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t001.edf",
+    "subject": "aaaaarjc",
+    "session": "s010_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarjc_s010_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t002.edf",
+    "subject": "aaaaarjc",
+    "session": "s010_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarjc_s010_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t003.edf",
+    "subject": "aaaaarjc",
+    "session": "s010_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarjc_s010_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t005.edf",
+    "subject": "aaaaarjc",
+    "session": "s010_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarjc_s010_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarjc\\s010_2015\\01_tcp_ar\\aaaaarjc_s010_t006.edf",
+    "subject": "aaaaarjc",
+    "session": "s010_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarml_s007_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarml\\s007_2015\\01_tcp_ar\\aaaaarml_s007_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarml\\s007_2015\\01_tcp_ar\\aaaaarml_s007_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarml\\s007_2015\\01_tcp_ar\\aaaaarml_s007_t001.edf",
+    "subject": "aaaaarml",
+    "session": "s007_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s002_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s002_2014\\01_tcp_ar\\aaaaarnq_s002_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s002_2014\\01_tcp_ar\\aaaaarnq_s002_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s002_2014\\01_tcp_ar\\aaaaarnq_s002_t001.edf",
+    "subject": "aaaaarnq",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s003_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t002.edf",
+    "subject": "aaaaarnq",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s003_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t003.edf",
+    "subject": "aaaaarnq",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s003_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t005.edf",
+    "subject": "aaaaarnq",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s003_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t006.edf",
+    "subject": "aaaaarnq",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s003_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t007.edf",
+    "subject": "aaaaarnq",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s003_t008",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t008.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t008.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s003_2014\\01_tcp_ar\\aaaaarnq_s003_t008.edf",
+    "subject": "aaaaarnq",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s004_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t000.edf",
+    "subject": "aaaaarnq",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s004_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t001.edf",
+    "subject": "aaaaarnq",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s004_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t002.edf",
+    "subject": "aaaaarnq",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s004_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t003.edf",
+    "subject": "aaaaarnq",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s004_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t004.edf",
+    "subject": "aaaaarnq",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarnq_s004_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarnq\\s004_2014\\01_tcp_ar\\aaaaarnq_s004_t006.edf",
+    "subject": "aaaaarnq",
+    "session": "s004_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpu_s001_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s001_2014\\01_tcp_ar\\aaaaarpu_s001_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s001_2014\\01_tcp_ar\\aaaaarpu_s001_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s001_2014\\01_tcp_ar\\aaaaarpu_s001_t004.edf",
+    "subject": "aaaaarpu",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpu_s003_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s003_2014\\01_tcp_ar\\aaaaarpu_s003_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s003_2014\\01_tcp_ar\\aaaaarpu_s003_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s003_2014\\01_tcp_ar\\aaaaarpu_s003_t001.edf",
+    "subject": "aaaaarpu",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpu_s003_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s003_2014\\01_tcp_ar\\aaaaarpu_s003_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s003_2014\\01_tcp_ar\\aaaaarpu_s003_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s003_2014\\01_tcp_ar\\aaaaarpu_s003_t002.edf",
+    "subject": "aaaaarpu",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpu_s003_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s003_2014\\01_tcp_ar\\aaaaarpu_s003_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s003_2014\\01_tcp_ar\\aaaaarpu_s003_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpu\\s003_2014\\01_tcp_ar\\aaaaarpu_s003_t004.edf",
+    "subject": "aaaaarpu",
+    "session": "s003_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s001_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t003.edf",
+    "subject": "aaaaarpv",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s001_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t004.edf",
+    "subject": "aaaaarpv",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s001_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t006.edf",
+    "subject": "aaaaarpv",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s001_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s001_2014\\01_tcp_ar\\aaaaarpv_s001_t007.edf",
+    "subject": "aaaaarpv",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s002_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t000.edf",
+    "subject": "aaaaarpv",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s002_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t001.edf",
+    "subject": "aaaaarpv",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s002_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t002.edf",
+    "subject": "aaaaarpv",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s002_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t003.edf",
+    "subject": "aaaaarpv",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s002_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t004.edf",
+    "subject": "aaaaarpv",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s002_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t005.edf",
+    "subject": "aaaaarpv",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s002_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t006.edf",
+    "subject": "aaaaarpv",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s002_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t007.edf",
+    "subject": "aaaaarpv",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaarpv_s002_t008",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t008.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t008.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaarpv\\s002_2014\\01_tcp_ar\\aaaaarpv_s002_t008.edf",
+    "subject": "aaaaarpv",
+    "session": "s002_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasfw_s005_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasfw\\s005_2015\\01_tcp_ar\\aaaaasfw_s005_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasfw\\s005_2015\\01_tcp_ar\\aaaaasfw_s005_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasfw\\s005_2015\\01_tcp_ar\\aaaaasfw_s005_t007.edf",
+    "subject": "aaaaasfw",
+    "session": "s005_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasfw_s005_t011",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasfw\\s005_2015\\01_tcp_ar\\aaaaasfw_s005_t011.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasfw\\s005_2015\\01_tcp_ar\\aaaaasfw_s005_t011.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasfw\\s005_2015\\01_tcp_ar\\aaaaasfw_s005_t011.edf",
+    "subject": "aaaaasfw",
+    "session": "s005_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasip_s001_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s001_2015\\01_tcp_ar\\aaaaasip_s001_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s001_2015\\01_tcp_ar\\aaaaasip_s001_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s001_2015\\01_tcp_ar\\aaaaasip_s001_t000.edf",
+    "subject": "aaaaasip",
+    "session": "s001_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasip_s002_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s002_2015\\01_tcp_ar\\aaaaasip_s002_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s002_2015\\01_tcp_ar\\aaaaasip_s002_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s002_2015\\01_tcp_ar\\aaaaasip_s002_t002.edf",
+    "subject": "aaaaasip",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasip_s002_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s002_2015\\01_tcp_ar\\aaaaasip_s002_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s002_2015\\01_tcp_ar\\aaaaasip_s002_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s002_2015\\01_tcp_ar\\aaaaasip_s002_t004.edf",
+    "subject": "aaaaasip",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasip_s002_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s002_2015\\01_tcp_ar\\aaaaasip_s002_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s002_2015\\01_tcp_ar\\aaaaasip_s002_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s002_2015\\01_tcp_ar\\aaaaasip_s002_t006.edf",
+    "subject": "aaaaasip",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasip_s003_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s003_2015\\01_tcp_ar\\aaaaasip_s003_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s003_2015\\01_tcp_ar\\aaaaasip_s003_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s003_2015\\01_tcp_ar\\aaaaasip_s003_t004.edf",
+    "subject": "aaaaasip",
+    "session": "s003_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasip_s004_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s004_2015\\01_tcp_ar\\aaaaasip_s004_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s004_2015\\01_tcp_ar\\aaaaasip_s004_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasip\\s004_2015\\01_tcp_ar\\aaaaasip_s004_t000.edf",
+    "subject": "aaaaasip",
+    "session": "s004_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasjz_s001_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasjz\\s001_2014\\01_tcp_ar\\aaaaasjz_s001_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasjz\\s001_2014\\01_tcp_ar\\aaaaasjz_s001_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasjz\\s001_2014\\01_tcp_ar\\aaaaasjz_s001_t000.edf",
+    "subject": "aaaaasjz",
+    "session": "s001_2014",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasoc_s001_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasoc\\s001_2015\\01_tcp_ar\\aaaaasoc_s001_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasoc\\s001_2015\\01_tcp_ar\\aaaaasoc_s001_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasoc\\s001_2015\\01_tcp_ar\\aaaaasoc_s001_t000.edf",
+    "subject": "aaaaasoc",
+    "session": "s001_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasoc_s004_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasoc\\s004_2015\\01_tcp_ar\\aaaaasoc_s004_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasoc\\s004_2015\\01_tcp_ar\\aaaaasoc_s004_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasoc\\s004_2015\\01_tcp_ar\\aaaaasoc_s004_t000.edf",
+    "subject": "aaaaasoc",
+    "session": "s004_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaasoc_s004_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasoc\\s004_2015\\01_tcp_ar\\aaaaasoc_s004_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasoc\\s004_2015\\01_tcp_ar\\aaaaasoc_s004_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaasoc\\s004_2015\\01_tcp_ar\\aaaaasoc_s004_t001.edf",
+    "subject": "aaaaasoc",
+    "session": "s004_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaswc_s001_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s001_2015\\01_tcp_ar\\aaaaaswc_s001_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s001_2015\\01_tcp_ar\\aaaaaswc_s001_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s001_2015\\01_tcp_ar\\aaaaaswc_s001_t001.edf",
+    "subject": "aaaaaswc",
+    "session": "s001_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaswc_s002_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s002_2015\\01_tcp_ar\\aaaaaswc_s002_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s002_2015\\01_tcp_ar\\aaaaaswc_s002_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s002_2015\\01_tcp_ar\\aaaaaswc_s002_t001.edf",
+    "subject": "aaaaaswc",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaswc_s002_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s002_2015\\01_tcp_ar\\aaaaaswc_s002_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s002_2015\\01_tcp_ar\\aaaaaswc_s002_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s002_2015\\01_tcp_ar\\aaaaaswc_s002_t002.edf",
+    "subject": "aaaaaswc",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaaswc_s002_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s002_2015\\01_tcp_ar\\aaaaaswc_s002_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s002_2015\\01_tcp_ar\\aaaaaswc_s002_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaaswc\\s002_2015\\01_tcp_ar\\aaaaaswc_s002_t003.edf",
+    "subject": "aaaaaswc",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatao_s002_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t003.edf",
+    "subject": "aaaaatao",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatao_s002_t004",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t004.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t004.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t004.edf",
+    "subject": "aaaaatao",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatao_s002_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t005.edf",
+    "subject": "aaaaatao",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatao_s002_t006",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t006.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t006.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t006.edf",
+    "subject": "aaaaatao",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatao_s002_t008",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t008.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t008.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s002_2015\\01_tcp_ar\\aaaaatao_s002_t008.edf",
+    "subject": "aaaaatao",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatao_s003_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s003_2015\\01_tcp_ar\\aaaaatao_s003_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s003_2015\\01_tcp_ar\\aaaaatao_s003_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s003_2015\\01_tcp_ar\\aaaaatao_s003_t000.edf",
+    "subject": "aaaaatao",
+    "session": "s003_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatao_s003_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s003_2015\\01_tcp_ar\\aaaaatao_s003_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s003_2015\\01_tcp_ar\\aaaaatao_s003_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatao\\s003_2015\\01_tcp_ar\\aaaaatao_s003_t001.edf",
+    "subject": "aaaaatao",
+    "session": "s003_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatba_s002_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s002_2015\\01_tcp_ar\\aaaaatba_s002_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s002_2015\\01_tcp_ar\\aaaaatba_s002_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s002_2015\\01_tcp_ar\\aaaaatba_s002_t001.edf",
+    "subject": "aaaaatba",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatba_s002_t002",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s002_2015\\01_tcp_ar\\aaaaatba_s002_t002.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s002_2015\\01_tcp_ar\\aaaaatba_s002_t002.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s002_2015\\01_tcp_ar\\aaaaatba_s002_t002.edf",
+    "subject": "aaaaatba",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatba_s002_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s002_2015\\01_tcp_ar\\aaaaatba_s002_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s002_2015\\01_tcp_ar\\aaaaatba_s002_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s002_2015\\01_tcp_ar\\aaaaatba_s002_t003.edf",
+    "subject": "aaaaatba",
+    "session": "s002_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatba_s003_t005",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s003_2015\\01_tcp_ar\\aaaaatba_s003_t005.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s003_2015\\01_tcp_ar\\aaaaatba_s003_t005.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s003_2015\\01_tcp_ar\\aaaaatba_s003_t005.edf",
+    "subject": "aaaaatba",
+    "session": "s003_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatba_s003_t015",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s003_2015\\01_tcp_ar\\aaaaatba_s003_t015.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s003_2015\\01_tcp_ar\\aaaaatba_s003_t015.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatba\\s003_2015\\01_tcp_ar\\aaaaatba_s003_t015.edf",
+    "subject": "aaaaatba",
+    "session": "s003_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatdt_s001_t000",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s001_2015\\01_tcp_ar\\aaaaatdt_s001_t000.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s001_2015\\01_tcp_ar\\aaaaatdt_s001_t000.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s001_2015\\01_tcp_ar\\aaaaatdt_s001_t000.edf",
+    "subject": "aaaaatdt",
+    "session": "s001_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatdt_s001_t001",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s001_2015\\01_tcp_ar\\aaaaatdt_s001_t001.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s001_2015\\01_tcp_ar\\aaaaatdt_s001_t001.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s001_2015\\01_tcp_ar\\aaaaatdt_s001_t001.edf",
+    "subject": "aaaaatdt",
+    "session": "s001_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatdt_s003_t003",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s003_2015\\01_tcp_ar\\aaaaatdt_s003_t003.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s003_2015\\01_tcp_ar\\aaaaatdt_s003_t003.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s003_2015\\01_tcp_ar\\aaaaatdt_s003_t003.edf",
+    "subject": "aaaaatdt",
+    "session": "s003_2015",
+    "montage": "01_tcp_ar"
+  },
+  {
+    "stem": "aaaaatdt_s003_t007",
+    "csv_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s003_2015\\01_tcp_ar\\aaaaatdt_s003_t007.csv",
+    "csv_bi_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s003_2015\\01_tcp_ar\\aaaaatdt_s003_t007.csv_bi",
+    "edf_path": "D:\\EEG_DATA\\tuh_eval\\aaaaatdt\\s003_2015\\01_tcp_ar\\aaaaatdt_s003_t007.edf",
+    "subject": "aaaaatdt",
+    "session": "s003_2015",
+    "montage": "01_tcp_ar"
+  }
+]

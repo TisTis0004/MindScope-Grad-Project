@@ -1,0 +1,24 @@
+{
+  "label_to_id": {
+    "bckg": 0,
+    "absz": 1,
+    "cpsz": 2,
+    "fnsz": 3,
+    "gnsz": 4,
+    "mysz": 5,
+    "spsz": 6,
+    "tcsz": 7,
+    "tnsz": 8
+  },
+  "id_to_label": {
+    "0": "bckg",
+    "1": "absz",
+    "2": "cpsz",
+    "3": "fnsz",
+    "4": "gnsz",
+    "5": "mysz",
+    "6": "spsz",
+    "7": "tcsz",
+    "8": "tnsz"
+  }
+}
