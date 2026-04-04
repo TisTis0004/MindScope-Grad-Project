@@ -128,28 +128,30 @@ class TUHZDataset(Dataset):
         raise NotImplementedError(
             "Set return_paths_only=True, or implement loaders for EDF/CSV here."
         )
-        
+
     def to_json(self, out_path: str | Path) -> None:
         out_path = Path(out_path)
 
         data = []
         for rec in self.records:
-            data.append({
-                "stem": rec.stem,
-                "csv_path": str(rec.csv_path),
-                "csv_bi_path": str(rec.csv_bi_path),
-                "edf_path": str(rec.edf_path),
-                "subject": rec.subject_dir,
-                "session": rec.session_dir,
-                "montage": rec.montage_dir,
-            })
+            data.append(
+                {
+                    "stem": rec.stem,
+                    "csv_path": str(rec.csv_path),
+                    "csv_bi_path": str(rec.csv_bi_path),
+                    "edf_path": str(rec.edf_path),
+                    "subject": rec.subject_dir,
+                    "session": rec.session_dir,
+                    "montage": rec.montage_dir,
+                }
+            )
 
         out_path.parent.mkdir(parents=True, exist_ok=True)
         with out_path.open("w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
         print(f"Saved {len(data)} records to {out_path}")
-    
+
 
 def csv_has_seizure(csv_path: str | Path) -> bool:
     csv_path = Path(csv_path)
@@ -159,9 +161,9 @@ def csv_has_seizure(csv_path: str | Path) -> bool:
 
     df = pd.read_csv(
         csv_path,
-        comment="#",          # ⬅️ THIS skips all metadata rows
-        usecols=["label"],    # ⬅️ safer than column index
-        dtype=str
+        comment="#",
+        usecols=["label"],
+        dtype=str,
     )
 
     labels = df["label"].str.strip().str.lower()
@@ -171,11 +173,11 @@ def csv_has_seizure(csv_path: str | Path) -> bool:
 
 
 dataset = TUHZDataset(
-    r"D:\EEG_DATA\tuh_train", allowed_montages=None
+    r"/run/media/TisTis/HDD/EEG Dataset/v2.0.3/edf/eval/", allowed_montages=None
 )  # We can use allowed montages only as follows if needed {"03_tcp_ar_a", "02_tcp_le"} ما بعرف اذا بتفيد بس عمومًا موجودة
-dataset.to_json("tuh_train_index.json")
-with open('tuh_train_index.json', 'r') as f:
-    data=json.load(f)
+dataset.to_json("tuh_eval_index.json")
+with open("tuh_eval_index.json", "r") as f:
+    data = json.load(f)
 
 seizure_records = []
 
@@ -184,7 +186,7 @@ for rec in data:
         seizure_records.append(rec)
 
 
-outpath=Path('eeg_seizure_only.json')
-with outpath.open('w' , encoding='utf-8') as f:
-    json.dump(seizure_records , f, indent=2)
+outpath = Path("eeg_seizure_only_eval.json")
+with outpath.open("w", encoding="utf-8") as f:
+    json.dump(seizure_records, f, indent=2)
 print(f"Seizure recordings: {len(seizure_records)} / {len(data)}")

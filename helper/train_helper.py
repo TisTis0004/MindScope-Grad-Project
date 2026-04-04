@@ -20,11 +20,10 @@ from sklearn.metrics import (
     top_k_accuracy_score,
 )
 from tqdm import tqdm
-
-from braindecode.models import EEGNet
+from models.models import BinarySeizureCNN, MultiClassSeizureCNN
 
 sys.path.append(str(Path(__file__).resolve().parents[2]))
-from data.dataloader import Loader  # noqa: E402
+from data.dataloader import Loader
 
 
 # =========================================================
@@ -129,12 +128,11 @@ def save_history_to_csv(history, csv_path):
         writer.writerows(history)
 
 
-def build_model(device, weights=None):
-    model = EEGNet(
-        n_chans=41,
-        n_outputs=NUM_CLASSES,
-        n_times=2500,
-    )
+def build_model(device, weights=None, num_classes=2, task="binary"):
+    if task == "binary":
+        model = BinarySeizureCNN()
+    else:
+        model = MultiClassSeizureCNN(num_classes=num_classes)
 
     if weights:
         checkpoint = torch.load(weights, map_location=device, weights_only=False)
@@ -166,20 +164,53 @@ def get_loader_counts(loader):
     return dict(sorted(counts.items()))
 
 
-def get_class_weights(device):
-    counts = torch.tensor(
-        [118873, 89, 1376, 4125, 8204, 256, 266, 352, 69], dtype=torch.float
-    )
-    weights = counts.sum() / (counts + 1e-6)
-    weights = weights / weights.mean()
-    return weights.to(device)
+def get_dynamic_class_weights(class_counts, device, task="binary"):
+    """
+    Implements the dynamic class weighting from Akor et al. (2025).
+    """
+    N = sum(class_counts)
+    K = len(class_counts)
+    weights = []
+
+    if task == "binary":
+        # Equation 10: Standard inverse frequency for Binary
+        for count in class_counts:
+            w = N / (K * count) if count > 0 else 0.0
+            weights.append(w)
+    elif task == "multiclass":
+        # Equation 11: Two-factor weighting for extreme multi-class imbalance
+        max_N = max(class_counts)
+        for count in class_counts:
+            # First term: standard inverse frequency
+            term1 = N / (K * count) if count > 0 else 0.0
+            # Second term: scaling based on ratio of most common class to current class
+            term2 = max_N / count if count > 0 else 0.0
+            weights.append(term1 * term2)
+    else:
+        raise ValueError("Task must be 'binary' or 'multiclass'")
+
+    weight_tensor = torch.tensor(weights, dtype=torch.float)
+
+    # Normalize weights so the mean is 1.0 to prevent learning rate explosion
+    weight_tensor = weight_tensor / weight_tensor.mean()
+    return weight_tensor.to(device)
 
 
-def build_training_components(model, device):
-    criterion = nn.CrossEntropyLoss(weight=get_class_weights(device))
-    optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=1e-2)
+### Fine-Tuning ###
+def build_training_components(model, device, class_counts, task):
+    weights = get_dynamic_class_weights(class_counts, device, task)
+
+    if task == "binary":
+        pos_weight = torch.tensor([weights[1] / weights[0]], device=device)
+        criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
+    else:
+        criterion = nn.CrossEntropyLoss(weight=weights)
+
+    # FINE-TUNING LR: Dropped to 5e-5 to slightly adjust the pre-trained weights
+    optimizer = torch.optim.AdamW(model.parameters(), lr=5e-5, weight_decay=1e-2)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=EPOCHS)
     scaler = torch.amp.GradScaler("cuda", enabled=(device.type == "cuda"))
+
     return criterion, optimizer, scheduler, scaler
 
 
@@ -213,7 +244,12 @@ def train_one_epoch(
 
         with torch.amp.autocast(device_type="cuda", enabled=use_amp):
             logits = model(x)
-            loss = criterion(logits, y)
+
+            # Handle PyTorch's different loss shape/type requirements
+            if num_classes == 2:
+                loss = criterion(logits.squeeze(-1), y.float())
+            else:
+                loss = criterion(logits, y)
 
         scaler.scale(loss).backward()
         scaler.unscale_(optimizer)
@@ -221,8 +257,17 @@ def train_one_epoch(
         scaler.step(optimizer)
         scaler.update()
 
-        probs = torch.softmax(logits, dim=1)
-        preds = torch.argmax(logits, dim=1)
+        if num_classes == 2:
+            prob_pos = torch.sigmoid(logits.squeeze(-1))
+            preds = (prob_pos >= 0.5).long()
+
+            # Format as 2D array [prob_negative, prob_positive] so ROC-AUC metric doesn't break
+            probs = torch.zeros((logits.size(0), 2), device=logits.device)
+            probs[:, 0] = 1.0 - prob_pos
+            probs[:, 1] = prob_pos
+        else:
+            probs = torch.softmax(logits, dim=1)
+            preds = torch.argmax(logits, dim=1)
 
         batch_size = y.size(0)
         total_loss += loss.item() * batch_size
@@ -282,10 +327,22 @@ def evaluate(
 
         with torch.amp.autocast(device_type="cuda", enabled=use_amp):
             logits = model(x)
-            loss = criterion(logits, y)
 
-        probs = torch.softmax(logits, dim=1)
-        preds = torch.argmax(logits, dim=1)
+            if num_classes == 2:
+                loss = criterion(logits.squeeze(-1), y.float())
+            else:
+                loss = criterion(logits, y)
+
+        if num_classes == 2:
+            prob_pos = torch.sigmoid(logits.squeeze(-1))
+            preds = (prob_pos >= 0.5).long()
+
+            probs = torch.zeros((logits.size(0), 2), device=logits.device)
+            probs[:, 0] = 1.0 - prob_pos
+            probs[:, 1] = prob_pos
+        else:
+            probs = torch.softmax(logits, dim=1)
+            preds = torch.argmax(logits, dim=1)
 
         batch_size = y.size(0)
         total_loss += loss.item() * batch_size

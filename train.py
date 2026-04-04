@@ -1,20 +1,17 @@
 import os
 import time
-
-import numpy as np
 import torch
 from braindecode.util import set_random_seeds
 
+from data.dataloader import Loader
 from helper.train_helper import (
     CHECKPOINT_PATH,
     EPOCHS,
     HISTORY_CSV_PATH,
     MONITOR,
-    NUM_CLASSES,
     PATIENCE,
     SEED,
     build_epoch_message,
-    build_loaders,
     build_log_row,
     build_model,
     build_training_components,
@@ -26,6 +23,54 @@ from helper.train_helper import (
     train_one_epoch,
 )
 
+TASK = "binary"  # "multiclass" or "binary" based on the stage
+
+if TASK == "binary":
+    NUM_CLASSES = 2
+    CLASS_COUNTS = [118873, 14737]
+    TRAIN_MANIFEST = "cache_windows_train_8_classes/manifest.jsonl"
+    VAL_MANIFEST = "cache_windows_eval_8_classes/manifest.jsonl"
+    WEIGHTS_SAVE_NAME = "binary_best_model.pt"
+
+elif TASK == "multiclass":
+    NUM_CLASSES = 8
+    CLASS_COUNTS = [
+        7598,
+        5601,
+        17837,
+        36500,
+        1276,
+        1226,
+        1589,
+        292,
+    ]  # purified class count on threshold 90%
+    TRAIN_MANIFEST = "cache_windows_train_8_classes/stage2_filtered_manifest.jsonl"
+    VAL_MANIFEST = "cache_windows_eval_8_classes/stage2_eval_filtered_manifest.jsonl"
+    WEIGHTS_SAVE_NAME = "multiclass_best_model.pt"
+
+
+def build_loaders(transform=None):
+    train_loader_obj = Loader(
+        ds=TRAIN_MANIFEST,
+        transform=transform,
+        task=TASK,
+        balance_data=False,  # set True to get 1:1 balanced data
+        shuffle=True,
+        pin_memory=True,
+    )
+    train_loader = train_loader_obj.return_Loader()
+
+    val_loader_obj = Loader(
+        ds=VAL_MANIFEST,
+        transform=transform,
+        task=TASK,
+        balance_data=False,
+        shuffle=False,
+        pin_memory=True,
+    )
+    val_loader = val_loader_obj.return_Loader()
+    return train_loader, val_loader
+
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -36,10 +81,20 @@ def main():
     print(f"Using device: {device}")
     print(f"AMP enabled: {use_amp}")
 
-    set_random_seeds(seed=SEED, cuda=(device.type == "cuda"))
+    set_random_seeds(seed=int(SEED), cuda=(device.type == "cuda"))
 
-    model = build_model(device, weights="best_model_checkpoint.pt")
-    criterion, optimizer, scheduler, scaler = build_training_components(model, device)
+    if os.path.exists(WEIGHTS_SAVE_NAME):
+        print(f"Found existing checkpoint! Resuming from {WEIGHTS_SAVE_NAME}...")
+        model = build_model(
+            device, weights=WEIGHTS_SAVE_NAME, num_classes=NUM_CLASSES, task=TASK
+        )
+    else:
+        print(f"No checkpoint found. Starting fresh training for {TASK} model!")
+        model = build_model(device, weights=None, num_classes=NUM_CLASSES, task=TASK)
+
+    criterion, optimizer, scheduler, scaler = build_training_components(
+        model, device, CLASS_COUNTS, TASK
+    )
 
     transform = None
     train_loader, val_loader = build_loaders(transform=transform)
@@ -94,7 +149,11 @@ def main():
         history.append(log_row)
         save_history_to_csv(history, HISTORY_CSV_PATH)
 
-        print(build_epoch_message(epoch, EPOCHS, log_row, train_metrics, val_metrics, topk))
+        print(
+            build_epoch_message(
+                epoch, EPOCHS, log_row, train_metrics, val_metrics, topk
+            )
+        )
         print("Val Confusion Matrix:")
         print(val_metrics["confusion_matrix"])
 
@@ -117,7 +176,9 @@ def main():
             )
 
             torch.save(checkpoint, CHECKPOINT_PATH)
-            print(f"Saved best checkpoint at epoch {epoch + 1} with {MONITOR}={best_metric:.6f}")
+            print(
+                f"Saved best checkpoint at epoch {epoch + 1} with {MONITOR}={best_metric:.6f}"
+            )
         else:
             patience_counter += 1
             print(f"No improvement. Patience {patience_counter}/{PATIENCE}")
@@ -127,7 +188,9 @@ def main():
             break
 
     if os.path.exists(CHECKPOINT_PATH):
-        checkpoint = torch.load(CHECKPOINT_PATH, map_location=device, weights_only=False)
+        checkpoint = torch.load(
+            CHECKPOINT_PATH, map_location=device, weights_only=False
+        )
         model.load_state_dict(checkpoint["model_state_dict"])
         print(
             f"Loaded best model from epoch {checkpoint['epoch']} "

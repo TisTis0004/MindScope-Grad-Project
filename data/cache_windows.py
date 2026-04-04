@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 import torch
 import mne
+from scipy.signal import butter, filtfilt
 
 
 def read_label_intervals_from_csv(csv_path: str | Path):
@@ -49,8 +50,6 @@ def get_window_label(ws, we, intervals, default="bckg"):
     return max(overlap_by_label.items(), key=lambda x: x[1])[0]
 
 
-
-
 def load_label_vocab(label_map_path: str | Path):
     print(type(label_map_path), label_map_path)
     label_map_path = Path(label_map_path)
@@ -80,13 +79,7 @@ def build_label_vocab(records):
         )
 
         labs = (
-            df["label"]
-            .astype(str)
-            .str.strip()
-            .str.lower()
-            .dropna()
-            .unique()
-            .tolist()
+            df["label"].astype(str).str.strip().str.lower().dropna().unique().tolist()
         )
         labels.update(labs)
 
@@ -116,6 +109,14 @@ def load_full_edf_all_channels(
 
     data = raw.get_data().astype(np.float32)
 
+    # --- ADDED: 5th-order Butterworth bandpass filter (0.5 - 40 Hz) ---
+    nyq = 0.5 * fs
+    low = 0.5 / nyq
+    high = 40.0 / nyq
+    b, a = butter(5, [low, high], btype="band")
+    data = filtfilt(b, a, data, axis=1).astype(np.float32)
+    # ------------------------------------------------------------------
+
     mean = data.mean(axis=1, keepdims=True)
     std = data.std(axis=1, keepdims=True) + 1e-6
     data = (data - mean) / std
@@ -133,9 +134,9 @@ def cache_one_record_windows(
     out_dir: str | Path,
     label_to_id: Dict[str, int],
     fs: int = 250,
-    window_sec: float = 10.0,
-    stride_sec: float = 5.0,
-    c_max: int = 41,
+    window_sec: float = 1.0,  # changed from 10.0
+    stride_sec: float = 1.0,  # changed from 5.0
+    c_max: int = 21,  # changed from 41
     max_windows: Optional[int] = None,
 ) -> Optional[Tuple[Path, int]]:
     out_dir = Path(out_dir)
@@ -239,7 +240,7 @@ def build_cache_from_json(
     c_max: int = 41,
     max_records: Optional[int] = None,
     max_windows_per_record: Optional[int] = None,
-     label_map_path: Optional[str | Path] = None,
+    label_map_path: Optional[str | Path] = None,
 ) -> Path:
     json_path = Path(json_path)
     out_dir = Path(out_dir)
@@ -250,17 +251,15 @@ def build_cache_from_json(
 
     if max_records is not None:
         records = records[:max_records]
-    
-    if  label_map_path is not None :
+
+    if label_map_path is not None:
 
         label_to_id, id_to_label = load_label_vocab(label_map_path)
         print(f"Loaded label map from: {label_map_path}")
-    
-    else :
+
+    else:
         label_to_id, id_to_label = build_label_vocab(records)
         print("Built label map from current records")
-        
-        
 
     print("Global label mapping:")
     for lab, idx in label_to_id.items():
@@ -297,7 +296,9 @@ def build_cache_from_json(
             out_pt, n = result
             n_ok += 1
 
-            mf.write(json.dumps({"pt_path": str(out_pt), "n": n}, ensure_ascii=False) + "\n")
+            mf.write(
+                json.dumps({"pt_path": str(out_pt), "n": n}, ensure_ascii=False) + "\n"
+            )
             print(f"[{i}/{len(records)}] cached: {out_pt.name} ({n} windows)")
 
     print(f"Done. Cached {n_ok} recordings.")
@@ -307,13 +308,13 @@ def build_cache_from_json(
 
 if __name__ == "__main__":
     manifest = build_cache_from_json(
-        json_path=r"..\assets\eeg_seizure_only_eval.json",
-        out_dir=r"..\cache_windows_eval_8_classes",
-        label_map_path=r"..\assets\label_map.json",
+        json_path=r"eeg_seizure_only_eval.json",
+        out_dir=r"cache_windows_eval_8_classes",
+        label_map_path=r"label_map.json",
         fs=250,
-        window_sec=10.0,
-        stride_sec=5.0,
-        c_max=41,
+        window_sec=1.0,
+        stride_sec=1.0,
+        c_max=21,  # to match the 2025 paper approach
         max_records=None,
         max_windows_per_record=None,
     )
