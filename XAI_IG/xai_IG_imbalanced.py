@@ -21,7 +21,7 @@ from models.models import BinarySeizureCNN
 MODEL_PATH   = "Binary_Imbalanced_Finetune_Run_2.pt"
 MANIFEST     = r"G:\.shortcut-targets-by-id\1NILfnYdShyoztLuAa5RVrCdsfnBDubyl\cache_windows_eval_8_classes\manifest.jsonl"
 DATA_DIR     = r"G:\.shortcut-targets-by-id\1NILfnYdShyoztLuAa5RVrCdsfnBDubyl\cache_windows_eval_8_classes"
-OUTPUT_DIR   = "xai_results"
+OUTPUT_DIR   = "xai_results_imbalanced
 DEVICE       = "cuda" if torch.cuda.is_available() else "cpu"
 
 MAX_WINDOWS  = None
