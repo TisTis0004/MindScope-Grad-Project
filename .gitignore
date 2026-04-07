@@ -7,8 +7,6 @@ cache_windows_eval_8_classes
 cache_windows
 assets
 __pycache__
-*.pt
-*.pth
 *.csv_bi
 *.png
 cache_windows_binary
