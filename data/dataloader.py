@@ -88,9 +88,9 @@ class Loader:
     ):
         ds = PTStreamWindowsDataset(ds, transform)
 
-        for i in range(min(10, len(ds))):
-            s = ds[i]
-            print(i, s["y"].item(), s["y"].dtype)
+        # for i in range(min(10, len(ds))):
+        #     s = ds[i]
+        #     print(i, s["y"].item(), s["y"].dtype)
 
         sampler = None
         if use_weighted_sampler:
@@ -108,6 +108,7 @@ class Loader:
                 replacement=True,
             )
 
+        print('creating the loader ')
         self.dl = DataLoader(
             ds,
             batch_size=batch_size,

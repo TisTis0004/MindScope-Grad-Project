@@ -4,6 +4,7 @@ import time
 import numpy as np
 import torch
 from braindecode.util import set_random_seeds
+from helper import EEGToSpectrogram
 
 from helper.train_helper import (
     CHECKPOINT_PATH,
@@ -26,6 +27,7 @@ from helper.train_helper import (
     train_one_epoch,
 )
 
+# from transform import EEGTransform
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -38,9 +40,9 @@ def main():
 
     set_random_seeds(seed=SEED, cuda=(device.type == "cuda"))
 
-    model = build_model(device, weights = CHECKPOINT_PATH) # if u have any weights to use  
+    model = build_model(device, weights =   CHECKPOINT_PATH) # if u have any weights to use  
     criterion, optimizer, scheduler, scaler = build_training_components(model, device)
-
+    print('creating the loader ')
     transform = None
     train_loader, val_loader = build_loaders(transform=transform)
 
@@ -117,7 +119,7 @@ def main():
             )
 
             torch.save(checkpoint, CHECKPOINT_PATH)
-            print(f"Saved best checkpoint at epoch {epoch + 1} with {MONITOR}={best_metric:.6f}")
+            print(f"Saved best checkpoint at epoch {epoch + 1} with {MONITOR}={current_metric:.6f}")
         else:
             patience_counter += 1
             print(f"No improvement. Patience {patience_counter}/{PATIENCE}")

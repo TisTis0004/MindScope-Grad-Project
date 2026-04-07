@@ -3,7 +3,7 @@ import csv
 from collections import Counter
 from pathlib import Path
 import sys
-
+from helper.models import ResNet1D , restnet18_2d , Spectrogram_CNN_LSTM
 import numpy as np
 import torch
 import torch.nn as nn
@@ -17,26 +17,52 @@ from sklearn.metrics import (
 )
 from tqdm import tqdm
 
-from braindecode.models import EEGNet
+
+from braindecode.models import EEGNet 
+from braindecode.models import EEGTCNet
 
 sys.path.append(str(Path(__file__).resolve().parents[2]))
-from data.dataloader import Loader  # noqa: E402
+from data.dataloaderV2 import Loader  # noqa: E402
+from data.dataloader import Loader  as orginal_loader
+
+class FocalLoss(nn.Module):
+    def __init__(self, alpha=None, gamma=2.0, reduction="mean"):
+        super().__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+        self.reduction = reduction
+
+    def forward(self, logits, targets):
+        ce = nn.functional.cross_entropy(
+            logits,
+            targets,
+            weight=self.alpha,
+            reduction="none",
+        )
+        pt = torch.exp(-ce)
+        loss = ((1 - pt) ** self.gamma) * ce
+
+        if self.reduction == "mean":
+            return loss.mean()
+        if self.reduction == "sum":
+            return loss.sum()
+        return loss
 
 
 # =========================================================
 # CONFIG
 # =========================================================
-NUM_CLASSES = 4
-EPOCHS = 30
+NUM_CLASSES = 2
+EPOCHS = 60
 LR = 1e-3
-PATIENCE = 10
+PATIENCE = 60
 MONITOR = "f1_macro"   # options: val_loss, accuracy, f1_macro, balanced_accuracy, auc
-CHECKPOINT_PATH = 'checkpoints/eeg_4_classes.pt'
-HISTORY_CSV_PATH = 'assets/eegnet_history.csv'
-SEED = 20200220
+CHECKPOINT_PATH = 'checkpoints/testing_loader2_eegtcn.pt'
+HISTORY_CSV_PATH = 'assets/testing_loader2.csv_eegtcn'
+SEED = 3025
 
-TRAIN_MANIFEST = 'cahce_windows/manifest.jsonl'
-VAL_MANIFEST = "cache_windows_eval/manifest.jsonl"
+TRAIN_MANIFEST = 'cache_windows_binary_10_sec\manifest.jsonl'
+VAL_MANIFEST = "cache_windows_binary_10_sec_eval\manifest.jsonl"
 
 
 # =========================================================
@@ -121,12 +147,9 @@ def save_history_to_csv(history, csv_path):
 
 
 def build_model(device, weights=None):
-    model = EEGNet(
-        n_chans=41,
-        n_outputs=NUM_CLASSES,
-        n_times=2500,
-    )
-
+  
+    model = EEGTCNet(n_chans=17, n_outputs=NUM_CLASSES, n_times=250 *10)
+    # model = EEGNet(n_chans=17, n_outputs=NUM_CLASSES, n_times=250 *10)
     if weights:
         checkpoint = torch.load(weights, map_location=device, weights_only=False)
         if "model_state_dict" in checkpoint:
@@ -138,10 +161,10 @@ def build_model(device, weights=None):
 
 
 def build_loaders(transform=None):
-    train_loader_obj = Loader(transform=transform)
+    train_loader_obj = Loader(transform=transform , ds = TRAIN_MANIFEST)
     train_loader = train_loader_obj.return_Loader()
 
-    val_loader_obj = Loader(transform=transform, ds=VAL_MANIFEST)
+    val_loader_obj = orginal_loader(transform=transform, ds=VAL_MANIFEST)
     val_loader = val_loader_obj.return_Loader()
 
     return train_loader, val_loader
@@ -158,14 +181,15 @@ def get_loader_counts(loader):
 
 #for 9 classes or to make the training not biased for the bcgz
 def get_class_weights(device):
-    counts = torch.tensor([118873, 4391, 8970, 1376], dtype=torch.float)
+    counts = torch.tensor([249028, 48270, 24633, 13858], dtype=torch.float)
     weights = counts.sum() / (len(counts) * counts)
     weights = weights / weights.mean()
     return weights.to(device)
 
 
 def build_training_components(model, device):
-    criterion = nn.CrossEntropyLoss(weight = get_class_weights(device))
+    weights = torch.tensor([1.0, 1.0], device=device)
+    criterion = nn.CrossEntropyLoss(weight = weights)
     optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=1e-2)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
         optimizer,
@@ -190,9 +214,7 @@ def train_one_epoch(model, loader, optimizer, criterion, scaler, device, use_amp
     for batch in pbar:
         x = batch["x"].to(device, non_blocking=True)
         y = batch["y"].to(device, non_blocking=True).long()
-
         optimizer.zero_grad(set_to_none=True)
-
         with torch.amp.autocast(device_type="cuda", enabled=use_amp):
             logits = model(x)
             loss = criterion(logits, y)
@@ -261,7 +283,8 @@ def evaluate(model, loader, criterion, device, use_amp=True, num_classes=2, topk
             loss = criterion(logits, y)
 
         probs = torch.softmax(logits, dim=1)
-        preds = torch.argmax(logits, dim=1)
+        threshold = 0.5
+        preds = (probs[:, 1] > threshold).long()
 
         batch_size = y.size(0)
         total_loss += loss.item() * batch_size

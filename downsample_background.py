@@ -18,6 +18,7 @@ def load_manifest(manifest_path: str | Path):
 
 def save_manifest(items, manifest_path: str | Path):
     manifest_path = Path(manifest_path)
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
     with manifest_path.open("w", encoding="utf-8") as f:
         for item in items:
             f.write(json.dumps(item, ensure_ascii=False) + "\n")
@@ -34,12 +35,20 @@ def count_classes(manifest_items):
 
 def downsample_background(
     manifest_path: str | Path,
-    output_manifest_path: str | Path | None = None,
+    output_manifest_path: str | Path,
+    output_data_dir: str | Path,
     background_class: int = 0,
     bg_multiplier: int = 5,
     seed: int = 42,
 ):
     torch.manual_seed(seed)
+
+    manifest_path = Path(manifest_path)
+    output_manifest_path = Path(output_manifest_path)
+    output_data_dir = Path(output_data_dir)
+
+    output_data_dir.mkdir(parents=True, exist_ok=True)
+    output_manifest_path.parent.mkdir(parents=True, exist_ok=True)
 
     manifest_items = load_manifest(manifest_path)
     if not manifest_items:
@@ -63,11 +72,7 @@ def downsample_background(
     print(f"Target background count: {target_bg}")
     print(f"Current background count: {current_bg}")
 
-    if current_bg <= target_bg:
-        print("Background is already within target. Nothing to do.")
-        return
-
-    # Collect all background indices globally
+    # Collect all background sample locations globally
     bg_locations = []  # list of (file_idx, sample_idx)
     for file_idx, item in enumerate(manifest_items):
         obj = torch.load(item["pt_path"], map_location="cpu")
@@ -78,16 +83,20 @@ def downsample_background(
 
     print(f"Total background samples found: {len(bg_locations)}")
 
-    perm = torch.randperm(len(bg_locations))
-    keep_bg_global = set(
-        tuple(bg_locations[i]) for i in perm[:target_bg].tolist()
-    )
+    if current_bg > target_bg:
+        perm = torch.randperm(len(bg_locations))
+        keep_bg_global = set(
+            tuple(bg_locations[i]) for i in perm[:target_bg].tolist()
+        )
+    else:
+        print("Background is already within target. Copying all files without downsampling.")
+        keep_bg_global = set(bg_locations)
 
     new_manifest = []
 
     for file_idx, item in enumerate(manifest_items):
-        pt_path = Path(item["pt_path"])
-        obj = torch.load(pt_path, map_location="cpu")
+        src_pt_path = Path(item["pt_path"])
+        obj = torch.load(src_pt_path, map_location="cpu")
 
         x = obj["x"]
         y = obj["y"]
@@ -102,21 +111,21 @@ def downsample_background(
         x_new = x[keep_mask]
         y_new = y[keep_mask]
 
-        obj["x"] = x_new
-        obj["y"] = y_new
+        new_obj = dict(obj)
+        new_obj["x"] = x_new
+        new_obj["y"] = y_new
 
-        torch.save(obj, pt_path)
+        # save to NEW folder, not overwrite original
+        dst_pt_path = output_data_dir / src_pt_path.name
+        torch.save(new_obj, dst_pt_path)
 
         new_n = int(len(y_new))
         new_manifest.append({
-            "pt_path": str(pt_path),
+            "pt_path": str(dst_pt_path),
             "n": new_n,
         })
 
-        print(f"{pt_path.name}: {len(y)} -> {new_n}")
-
-    if output_manifest_path is None:
-        output_manifest_path = manifest_path
+        print(f"{src_pt_path.name}: {len(y)} -> {new_n} | saved to {dst_pt_path}")
 
     save_manifest(new_manifest, output_manifest_path)
 
@@ -126,11 +135,10 @@ def downsample_background(
 
 if __name__ == "__main__":
     downsample_background(
-        manifest_path="cache_windows/manifest.jsonl",
-        output_manifest_path="cache_windows/manifest.jsonl",
+        manifest_path="cache_windows_binary_10_sec/manifest.jsonl",
+        output_manifest_path="cache_windows_downed2x_binary_10_sec/manifest.jsonl",
+        output_data_dir="cache_windows_downed_binary_10_sec",
         background_class=0,
-        bg_multiplier=5,
+        bg_multiplier=2,
         seed=42,
     )
-    
-# New class counts: {0: 44850, 3: 1376, 1: 4391, 2: 8970} new counts 5 : 1 

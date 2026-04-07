@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from typing import List, Tuple, Dict, Any, Optional
-
+from collections import defaultdict
 import numpy as np
 import pandas as pd
 import torch
@@ -28,7 +28,6 @@ GROUP_MAP = {
     "tnsz": "generalized",
 }
 
-
 def read_label_intervals_from_csv(csv_path: str | Path):
     csv_path = Path(csv_path)
     if not csv_path.exists():
@@ -37,42 +36,54 @@ def read_label_intervals_from_csv(csv_path: str | Path):
     df = pd.read_csv(
         csv_path,
         comment="#",
-        usecols=["start_time", "stop_time", "label"],
-        dtype={"start_time": float, "stop_time": float, "label": str},
+        usecols=["channel", "start_time", "stop_time", "label"],
+        dtype={
+            "channel": str,
+            "start_time": float,
+            "stop_time": float,
+            "label": str,
+        },
     )
 
+    df["channel"] = df["channel"].astype(str).str.strip()
     df["label"] = df["label"].astype(str).str.strip().str.lower()
 
     intervals = []
-    for s, e, lab in zip(df["start_time"], df["stop_time"], df["label"]):
+    for ch, s, e, lab in zip(df["channel"], df["start_time"], df["stop_time"], df["label"]):
         if pd.isna(s) or pd.isna(e) or pd.isna(lab):
             continue
         s, e = float(s), float(e)
         if e > s:
-            intervals.append((s, e, lab))
+            intervals.append((ch, s, e, lab))
 
     return intervals
 
 
-def get_window_label(ws, we, intervals, default="bckg"):
-    overlap_by_label = {}
+def get_window_label(ws, we, intervals, default="background", min_channels=2, min_ratio=0.25):
+    label_channels = defaultdict(set)
 
-    for s, e, lab in intervals:
+    for ch, s, e, raw_label in intervals:
         overlap = max(0.0, min(we, e) - max(ws, s))
-        if overlap > 0:
-            overlap_by_label[lab] = overlap_by_label.get(lab, 0.0) + overlap
+        if overlap <= 0:
+            continue
 
-    if not overlap_by_label:
-        raw_label = default
-    else:
-        raw_label = max(overlap_by_label.items(), key=lambda x: x[1])[0]
+        grouped_label = GROUP_MAP.get(raw_label)
+        if grouped_label is None or grouped_label == "background":
+            continue
 
-    if raw_label not in GROUP_MAP:
-        print(f"[WARN] unknown raw label: {raw_label}, using background")
-        return "background"
+        ratio = overlap / (we - ws)
+        if ratio >= min_ratio:
+            label_channels[grouped_label].add(ch)
 
-    return GROUP_MAP[raw_label]
+    if not label_channels:
+        return default
 
+    best_label, best_channels = max(label_channels.items(), key=lambda x: len(x[1]))
+
+    if len(best_channels) >= min_channels:
+        return best_label
+
+    return default
 
 def load_label_vocab(label_map_path: str | Path):
     label_map_path = Path(label_map_path)
@@ -176,8 +187,14 @@ def cache_one_record_windows(
         xw = x_full[:, st:en]
         if xw.shape[1] != win_T:
             continue
-
-        label = get_window_label(ws, we, label_intervals, default="bckg")
+        label = get_window_label(
+    ws,
+    we,
+    label_intervals,
+    default="background",
+    min_channels=2,
+    min_ratio=0.25,
+)
 
         if label not in label_to_id:
             print(f"[SKIP] unknown grouped label '{label}' in {csv_path}")
@@ -296,11 +313,11 @@ def build_cache_from_json(
 
 if __name__ == "__main__":
     manifest = build_cache_from_json(
-        json_path=r"..\assets\eeg_seizure_only_eval.json",
-        out_dir=r"..\cache_windows_eval",
+        json_path=r"assets\eeg_seizure_only_eval.json",
+        out_dir=r"cache_windows_eval",
         fs=250,
-        window_sec=10.0,
-        stride_sec=5.0,
+        window_sec=4.0,
+        stride_sec=2.0,
         c_max=41,
         max_records=None,
         max_windows_per_record=None,
