@@ -20,3 +20,5 @@ cache_windows_downed_binary_10_sec
 cache_windows_binary_10_sec_eval
 cache_windows_binary_10_sec
 data_ML
+venv/
+*.lnk
