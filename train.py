@@ -2,206 +2,115 @@ import os
 import time
 import torch
 from braindecode.util import set_random_seeds
-
 from data.dataloader import Loader
-from helper.train_helper import (
-    CHECKPOINT_PATH,
-    EPOCHS,
-    HISTORY_CSV_PATH,
-    MONITOR,
-    PATIENCE,
-    SEED,
-    build_epoch_message,
-    build_log_row,
-    build_model,
-    build_training_components,
-    evaluate,
-    get_monitored_metric,
-    is_better,
-    make_checkpoint,
-    save_history_to_csv,
-    train_one_epoch,
-)
+from helper.train_helper import *
 
-TASK = "binary"  # "multiclass" or "binary" based on the stage
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TASK = "binary"  # or "multiclass"
+SEED = int(os.getenv("SEED_1"))
+
 
 if TASK == "binary":
-    NUM_CLASSES = 2
-    CLASS_COUNTS = [118873, 14737]
+    NUM_CLASSES, CLASS_COUNTS = 2, [118873, 14737]
     TRAIN_MANIFEST = "cache_windows_train_8_classes/manifest.jsonl"
     VAL_MANIFEST = "cache_windows_eval_8_classes/manifest.jsonl"
     WEIGHTS_SAVE_NAME = "binary_best_model.pt"
-
-elif TASK == "multiclass":
-    NUM_CLASSES = 8
-    CLASS_COUNTS = [
-        7598,
-        5601,
-        17837,
-        36500,
-        1276,
-        1226,
-        1589,
-        292,
-    ]  # purified class count on threshold 90%
+else:
+    NUM_CLASSES, CLASS_COUNTS = 8, [7598, 5601, 17837, 36500, 1276, 1226, 1589, 292]
     TRAIN_MANIFEST = "cache_windows_train_8_classes/stage2_filtered_manifest.jsonl"
     VAL_MANIFEST = "cache_windows_eval_8_classes/stage2_eval_filtered_manifest.jsonl"
     WEIGHTS_SAVE_NAME = "multiclass_best_model.pt"
 
 
-def build_loaders(transform=None):
-    train_loader_obj = Loader(
-        ds=TRAIN_MANIFEST,
-        transform=transform,
-        task=TASK,
-        balance_data=False,  # set True to get 1:1 balanced data
-        shuffle=True,
-        pin_memory=True,
-    )
-    train_loader = train_loader_obj.return_Loader()
-
-    val_loader_obj = Loader(
-        ds=VAL_MANIFEST,
-        transform=transform,
-        task=TASK,
-        balance_data=False,
-        shuffle=False,
-        pin_memory=True,
-    )
-    val_loader = val_loader_obj.return_Loader()
-    return train_loader, val_loader
-
-
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    use_amp = device.type == "cuda"
-    mode = "min" if MONITOR == "val_loss" else "max"
-    topk = min(2, NUM_CLASSES)
+    set_random_seeds(seed=SEED, cuda=(device.type == "cuda"))
 
-    print(f"Using device: {device}")
-    print(f"AMP enabled: {use_amp}")
-
-    set_random_seeds(seed=int(SEED), cuda=(device.type == "cuda"))
-
+    model = build_model(device, weights=None, num_classes=NUM_CLASSES, task=TASK)
     if os.path.exists(WEIGHTS_SAVE_NAME):
-        print(f"Found existing checkpoint! Resuming from {WEIGHTS_SAVE_NAME}...")
+        print(f"Loading existing weights from {WEIGHTS_SAVE_NAME}")
         model = build_model(
             device, weights=WEIGHTS_SAVE_NAME, num_classes=NUM_CLASSES, task=TASK
         )
-    else:
-        print(f"No checkpoint found. Starting fresh training for {TASK} model!")
-        model = build_model(device, weights=None, num_classes=NUM_CLASSES, task=TASK)
 
     criterion, optimizer, scheduler, scaler = build_training_components(
         model, device, CLASS_COUNTS, TASK
     )
 
-    transform = None
-    train_loader, val_loader = build_loaders(transform=transform)
+    train_loader_obj = Loader(ds_path=TRAIN_MANIFEST, balanced=False, batch_size=128)
+    val_loader_obj = Loader(ds_path=VAL_MANIFEST, balanced=False, batch_size=128)
 
-    best_metric = None
-    best_epoch = -1
-    patience_counter = 0
-    history = []
+    train_loader = train_loader_obj.return_Loader()
+    val_loader = val_loader_obj.return_Loader()
 
-    start_time = time.time()
+    best_metric, history = None, []
+    mode = "min" if MONITOR == "val_loss" else "max"
 
+    print(f"\nStarting {TASK} training...")
     for epoch in range(EPOCHS):
-        epoch_start = time.time()
+        start = time.time()
 
-        train_metrics = train_one_epoch(
-            model=model,
-            loader=train_loader,
-            optimizer=optimizer,
-            criterion=criterion,
-            scaler=scaler,
-            device=device,
-            use_amp=use_amp,
+        train_m = train_one_epoch(
+            model,
+            train_loader,
+            optimizer,
+            criterion,
+            scaler,
+            device,
             num_classes=NUM_CLASSES,
-            topk=topk,
+            total_batches=train_loader_obj.total_batches,
         )
 
-        val_metrics = evaluate(
-            model=model,
-            loader=val_loader,
-            criterion=criterion,
-            device=device,
-            use_amp=use_amp,
+        val_m = evaluate(
+            model,
+            val_loader,
+            criterion,
+            device,
             num_classes=NUM_CLASSES,
-            topk=topk,
-            desc="Val",
+            total_batches=val_loader_obj.total_batches,
         )
 
         scheduler.step()
 
-        current_metric = get_monitored_metric(val_metrics)
-        epoch_time = time.time() - epoch_start
-
+        curr_m = get_monitored_metric(val_m)
         log_row = build_log_row(
-            epoch=epoch,
-            optimizer=optimizer,
-            train_metrics=train_metrics,
-            val_metrics=val_metrics,
-            epoch_time=epoch_time,
-            topk=topk,
+            epoch, optimizer, train_m, val_m, time.time() - start, 2
         )
-
         history.append(log_row)
-        save_history_to_csv(history, HISTORY_CSV_PATH)
 
-        print(
-            build_epoch_message(
-                epoch, EPOCHS, log_row, train_metrics, val_metrics, topk
+        # Print epoch summary
+        print(f"\n" + "=" * 50)
+        print(build_epoch_message(epoch, EPOCHS, log_row, train_m, val_m, 2))
+
+        # --- RESTORED: PRINT CONFUSION MATRIX ---
+        print("\nVal Confusion Matrix:")
+        print(val_m["confusion_matrix"])
+        print("=" * 50 + "\n")
+
+        if is_better(curr_m, best_metric, mode):
+            best_metric = curr_m
+            torch.save(
+                make_checkpoint(
+                    epoch,
+                    model,
+                    optimizer,
+                    scheduler,
+                    scaler,
+                    best_metric,
+                    train_m,
+                    val_m,
+                    history,
+                    True,
+                ),
+                CHECKPOINT_PATH,
             )
-        )
-        print("Val Confusion Matrix:")
-        print(val_metrics["confusion_matrix"])
-
-        if is_better(current_metric, best_metric, mode=mode):
-            best_metric = current_metric
-            best_epoch = epoch + 1
-            patience_counter = 0
-
-            checkpoint = make_checkpoint(
-                epoch=epoch,
-                model=model,
-                optimizer=optimizer,
-                scheduler=scheduler,
-                scaler=scaler,
-                best_metric=best_metric,
-                train_metrics=train_metrics,
-                val_metrics=val_metrics,
-                history=history,
-                use_amp=use_amp,
-            )
-
-            torch.save(checkpoint, CHECKPOINT_PATH)
-            print(
-                f"Saved best checkpoint at epoch {epoch + 1} with {MONITOR}={best_metric:.6f}"
-            )
+            print(f"*** New Best {MONITOR}: {best_metric:.4f} - Checkpoint Saved ***")
         else:
-            patience_counter += 1
-            print(f"No improvement. Patience {patience_counter}/{PATIENCE}")
-
-        if patience_counter >= PATIENCE:
-            print("Early stopping triggered.")
-            break
-
-    if os.path.exists(CHECKPOINT_PATH):
-        checkpoint = torch.load(
-            CHECKPOINT_PATH, map_location=device, weights_only=False
-        )
-        model.load_state_dict(checkpoint["model_state_dict"])
-        print(
-            f"Loaded best model from epoch {checkpoint['epoch']} "
-            f"with {checkpoint['monitor']}={checkpoint['best_metric']:.6f}"
-        )
-
-    total_time = time.time() - start_time
-    print(f"Best epoch: {best_epoch}")
-    print(f"Training completed in {total_time / 60:.2f} minutes")
+            print(f"No improvement in {MONITOR}.")
 
 
 if __name__ == "__main__":
-    torch.multiprocessing.freeze_support()
     main()
