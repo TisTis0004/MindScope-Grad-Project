@@ -171,10 +171,10 @@ def csv_has_seizure(csv_path: str | Path) -> bool:
 
 
 dataset = TUHZDataset(
-    r"D:\EEG_DATA\tuh_train", allowed_montages=None
+    r"D:\EEG_DATA\tuh_eval", allowed_montages=None
 )  # We can use allowed montages only as follows if needed {"03_tcp_ar_a", "02_tcp_le"} ما بعرف اذا بتفيد بس عمومًا موجودة
-dataset.to_json("tuh_train_index.json")
-with open('tuh_train_index.json', 'r') as f:
+dataset.to_json("tuh_train_index_eval.json")
+with open('tuh_train_index_eval.json', 'r') as f:
     data=json.load(f)
 
 seizure_records = []
@@ -184,7 +184,7 @@ for rec in data:
         seizure_records.append(rec)
 
 
-outpath=Path('eeg_seizure_only.json')
+outpath=Path('eeg_seizure_only_eval.json')
 with outpath.open('w' , encoding='utf-8') as f:
     json.dump(seizure_records , f, indent=2)
 print(f"Seizure recordings: {len(seizure_records)} / {len(data)}")

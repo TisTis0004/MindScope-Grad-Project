@@ -27,7 +27,7 @@ from helper.train_helper import (
     train_one_epoch,
 )
 
-# from transform import EEGTransform
+from helper.T import EEGToSpectrogram # it cant run in fly 
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -40,11 +40,11 @@ def main():
 
     set_random_seeds(seed=SEED, cuda=(device.type == "cuda"))
 
-    model = build_model(device, weights =   CHECKPOINT_PATH) # if u have any weights to use  
+    model = build_model(device, weights=None) # Train the new hybrid from scratch
     criterion, optimizer, scheduler, scaler = build_training_components(model, device)
     print('creating the loader ')
-    transform = None
-    train_loader, val_loader = build_loaders(transform=transform)
+    trans = EEGToSpectrogram().to(device)
+    train_loader, val_loader = build_loaders(transform=None)
 
     best_metric = None
     best_epoch = -1
@@ -63,6 +63,7 @@ def main():
             criterion=criterion,
             scaler=scaler,
             device=device,
+            transform=trans,
             use_amp=use_amp,
             num_classes=NUM_CLASSES,
             topk=topk,
@@ -73,15 +74,18 @@ def main():
             loader=val_loader,
             criterion=criterion,
             device=device,
+            transform=trans,
             use_amp=use_amp,
             num_classes=NUM_CLASSES,
             topk=topk,
             desc="Val",
         )
-
-        scheduler.step()
-
+        
+        
         current_metric = get_monitored_metric(val_metrics)
+        scheduler.step(current_metric)
+
+        
         epoch_time = time.time() - epoch_start
 
         log_row = build_log_row(

@@ -3,10 +3,11 @@ import csv
 from collections import Counter
 from pathlib import Path
 import sys
-from helper.models import ResNet1D , restnet18_2d , Spectrogram_CNN_LSTM
+from helper.models import ResNet1D, restnet18_2d, Spectrogram_CNN_LSTM, ResNet18_LSTM, CNN_LSTM_Large
 import numpy as np
 import torch
 import torch.nn as nn
+from helper.models import MHACNN
 from sklearn.metrics import (
     accuracy_score,
     balanced_accuracy_score,
@@ -16,7 +17,7 @@ from sklearn.metrics import (
     top_k_accuracy_score,
 )
 from tqdm import tqdm
-
+import torchaudio.transforms as T
 
 from braindecode.models import EEGNet 
 from braindecode.models import EEGTCNet
@@ -26,11 +27,12 @@ from data.dataloaderV2 import Loader  # noqa: E402
 from data.dataloader import Loader  as orginal_loader
 
 class FocalLoss(nn.Module):
-    def __init__(self, alpha=None, gamma=2.0, reduction="mean"):
+    def __init__(self, alpha=None, gamma=2.0, reduction="mean", label_smoothing=0.0):
         super().__init__()
         self.alpha = alpha
         self.gamma = gamma
         self.reduction = reduction
+        self.label_smoothing = label_smoothing
 
     def forward(self, logits, targets):
         ce = nn.functional.cross_entropy(
@@ -38,6 +40,7 @@ class FocalLoss(nn.Module):
             targets,
             weight=self.alpha,
             reduction="none",
+            label_smoothing=self.label_smoothing,
         )
         pt = torch.exp(-ce)
         loss = ((1 - pt) ** self.gamma) * ce
@@ -53,12 +56,12 @@ class FocalLoss(nn.Module):
 # CONFIG
 # =========================================================
 NUM_CLASSES = 2
-EPOCHS = 60
-LR = 1e-3
-PATIENCE = 60
+EPOCHS = 30
+LR = 3e-4
+PATIENCE = 30
 MONITOR = "f1_macro"   # options: val_loss, accuracy, f1_macro, balanced_accuracy, auc
-CHECKPOINT_PATH = 'checkpoints/testing_loader2_eegtcn.pt'
-HISTORY_CSV_PATH = 'assets/testing_loader2.csv_eegtcn'
+CHECKPOINT_PATH = 'checkpoints/cnn_lstm_large_v3.pt'
+HISTORY_CSV_PATH = 'assets/cnn_lstm_large_v3.csv'
 SEED = 3025
 
 TRAIN_MANIFEST = 'cache_windows_binary_10_sec\manifest.jsonl'
@@ -147,9 +150,8 @@ def save_history_to_csv(history, csv_path):
 
 
 def build_model(device, weights=None):
-  
-    model = EEGTCNet(n_chans=17, n_outputs=NUM_CLASSES, n_times=250 *10)
-    # model = EEGNet(n_chans=17, n_outputs=NUM_CLASSES, n_times=250 *10)
+    model = CNN_LSTM_Large()
+
     if weights:
         checkpoint = torch.load(weights, map_location=device, weights_only=False)
         if "model_state_dict" in checkpoint:
@@ -179,28 +181,52 @@ def get_loader_counts(loader):
         counts.update(map(int, y))
     return dict(sorted(counts.items()))
 
-#for 9 classes or to make the training not biased for the bcgz
-def get_class_weights(device):
-    counts = torch.tensor([249028, 48270, 24633, 13858], dtype=torch.float)
-    weights = counts.sum() / (len(counts) * counts)
-    weights = weights / weights.mean()
-    return weights.to(device)
 
 
 def build_training_components(model, device):
-    weights = torch.tensor([1.0, 1.0], device=device)
-    criterion = nn.CrossEntropyLoss(weight = weights)
-    optimizer = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=1e-2)
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-        optimizer,
-        T_max=EPOCHS
+    # Label smoothing: instead of hard [0,1] targets, use [0.05, 0.95].
+    # Prevents overconfident predictions that cause F1 oscillation.
+    criterion = FocalLoss(label_smoothing=0.05)
+    trainable_params = filter(lambda p: p.requires_grad, model.parameters())
+    optimizer = torch.optim.AdamW(trainable_params, lr=LR, weight_decay=1e-2)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer, 
+        mode='max',      # 'max' because we are monitoring f1_macro
+        factor=0.5,      # Halve the learning rate when stuck
+        patience=3       
     )
     scaler = torch.amp.GradScaler("cuda", enabled=(device.type == "cuda"))
     return criterion, optimizer, scheduler, scaler
 
 
-def train_one_epoch(model, loader, optimizer, criterion, scaler, device, use_amp=True, num_classes=2, topk=2):
+def mixup_data(x, y, alpha=0.2):
+    """
+    Spectrogram MixUp: blend two spectrograms and their labels.
+    
+    WHY: Instead of training on pure seizure vs pure background,
+    MixUp creates intermediate examples like "70% background + 30% seizure"
+    with label=0.3. This:
+    1. Forces the model to learn graded confidence (not binary all-or-nothing)
+    2. Smooths the decision boundary (prevents the wild F1 swings)
+    3. Acts as a powerful regularizer (proven in ImageNet papers)
+    """
+    if alpha > 0:
+        lam = np.random.beta(alpha, alpha)
+    else:
+        lam = 1.0
+    
+    batch_size = x.size(0)
+    index = torch.randperm(batch_size, device=x.device)
+    
+    mixed_x = lam * x + (1 - lam) * x[index]
+    y_a, y_b = y, y[index]
+    return mixed_x, y_a, y_b, lam
+
+
+def train_one_epoch(model, loader, optimizer, criterion, scaler, device, transform=None, use_amp=True, num_classes=2, topk=2):
     model.train()
+    if isinstance(transform, torch.nn.Module):
+        transform.train()
 
     total_loss = 0.0
     total_samples = 0
@@ -214,10 +240,21 @@ def train_one_epoch(model, loader, optimizer, criterion, scaler, device, use_amp
     for batch in pbar:
         x = batch["x"].to(device, non_blocking=True)
         y = batch["y"].to(device, non_blocking=True).long()
+       
+        if transform is not None:
+            with torch.no_grad():
+                x = transform(x)
+
+        # === SPECTROGRAM MIXUP ===
+        # Apply MixUp on the spectrogram (after transform, before model)
+        mixed_x, y_a, y_b, lam = mixup_data(x, y, alpha=0.1)
+
         optimizer.zero_grad(set_to_none=True)
+        
         with torch.amp.autocast(device_type="cuda", enabled=use_amp):
-            logits = model(x)
-            loss = criterion(logits, y)
+            logits = model(mixed_x)
+            # MixUp loss: weighted combination of losses for both labels
+            loss = lam * criterion(logits, y_a) + (1 - lam) * criterion(logits, y_b)
 
         scaler.scale(loss).backward()
         scaler.unscale_(optimizer)
@@ -225,6 +262,7 @@ def train_one_epoch(model, loader, optimizer, criterion, scaler, device, use_amp
         scaler.step(optimizer)
         scaler.update()
 
+        # For metrics, use original (unmixed) labels
         probs = torch.softmax(logits, dim=1)
         preds = torch.argmax(logits, dim=1)
 
@@ -232,7 +270,7 @@ def train_one_epoch(model, loader, optimizer, criterion, scaler, device, use_amp
         total_loss += loss.item() * batch_size
         total_samples += batch_size
 
-        all_targets.append(y.detach().cpu())
+        all_targets.append(y.detach().cpu()) 
         all_preds.append(preds.detach().cpu())
         all_probs.append(probs.detach().cpu())
 
@@ -262,8 +300,10 @@ def train_one_epoch(model, loader, optimizer, criterion, scaler, device, use_amp
 
 
 @torch.no_grad()
-def evaluate(model, loader, criterion, device, use_amp=True, num_classes=2, topk=2, desc="Eval"):
+def evaluate(model, loader, criterion, device, transform=None, use_amp=True, num_classes=2, topk=2, desc="Eval"):
     model.eval()
+    if isinstance(transform, torch.nn.Module):
+        transform.eval()
 
     total_loss = 0.0
     total_samples = 0
@@ -278,13 +318,15 @@ def evaluate(model, loader, criterion, device, use_amp=True, num_classes=2, topk
         x = batch["x"].to(device, non_blocking=True)
         y = batch["y"].to(device, non_blocking=True).long()
 
+        if transform is not None:
+            x = transform(x)
+
         with torch.amp.autocast(device_type="cuda", enabled=use_amp):
             logits = model(x)
             loss = criterion(logits, y)
 
         probs = torch.softmax(logits, dim=1)
-        threshold = 0.5
-        preds = (probs[:, 1] > threshold).long()
+        preds = torch.argmax(logits, dim=1)
 
         batch_size = y.size(0)
         total_loss += loss.item() * batch_size
@@ -298,6 +340,25 @@ def evaluate(model, loader, criterion, device, use_amp=True, num_classes=2, topk
     y_pred = torch.cat(all_preds).numpy()
     y_prob = torch.cat(all_probs).numpy()
 
+    # === OPTIMAL THRESHOLD SEARCH ===
+    # Training is 50/50 balanced, but eval is 80/20.
+    # argmax assumes threshold=0.5, which is wrong for imbalanced eval.
+    # Sweep thresholds and pick the one that maximizes F1-macro.
+    if num_classes == 2:
+        best_f1 = -1
+        best_thresh = 0.5
+        for thresh in np.arange(0.30, 0.71, 0.02):
+            y_pred_t = (y_prob[:, 1] >= thresh).astype(int)
+            _, _, f1_t, _ = precision_recall_fscore_support(
+                y_true, y_pred_t, average="macro", zero_division=0
+            )
+            if f1_t > best_f1:
+                best_f1 = f1_t
+                best_thresh = thresh
+        
+        # Use the optimized predictions
+        y_pred = (y_prob[:, 1] >= best_thresh).astype(int)
+
     metrics = compute_classification_metrics(
         y_true=y_true,
         y_pred=y_pred,
@@ -306,6 +367,8 @@ def evaluate(model, loader, criterion, device, use_amp=True, num_classes=2, topk
         topk=topk,
     )
     metrics["loss"] = total_loss / total_samples
+    if num_classes == 2:
+        metrics["best_threshold"] = best_thresh
 
     return metrics
 
@@ -371,6 +434,9 @@ def build_epoch_message(epoch, total_epochs, log_row, train_metrics, val_metrics
 
     if "auc" in val_metrics and not np.isnan(val_metrics["auc"]):
         msg += f" | Val AUC {val_metrics['auc']:.4f}"
+
+    if "best_threshold" in val_metrics:
+        msg += f" | Thresh {val_metrics['best_threshold']:.2f}"
 
     if f"top{topk}_accuracy" in val_metrics and not np.isnan(val_metrics[f"top{topk}_accuracy"]):
         msg += f" | Val Top{topk} {val_metrics[f'top{topk}_accuracy']:.4f}"

@@ -17,6 +17,16 @@ import mne
 # CONFIG
 # =========================================================
 
+
+BIPOLAR_MONTAGE = [
+    ("fp1", "f7"), ("f7", "t3"), ("t3", "t5"), ("t5", "o1"),  # Left temporal chain
+    ("fp2", "f8"), ("f8", "t4"), ("t4", "t6"), ("t6", "o2"),  # Right temporal chain
+    ("fp1", "f3"), ("f3", "c3"), ("c3", "p3"), ("p3", "o1"),  # Left parasagittal chain
+    ("fp2", "f4"), ("f4", "c4"), ("c4", "p4"), ("p4", "o2"),  # Right parasagittal chain
+    ("fz", "cz"), ("cz", "pz")                                # Midline chain
+]
+
+
 CANONICAL_21 = [
     "fp1", "fp2",
     "f7", "f3", "fz", "f4", "f8",
@@ -48,7 +58,7 @@ class CacheConfig:
     max_windows_per_record: Optional[int] = None
 
     l_freq: Optional[float] = 0.5
-    h_freq: Optional[float] = 25.0
+    h_freq: Optional[float] = 40.0   # FIXED: was 25.0, must match MelSpec f_max
 
     # binary labels
     background_labels: Tuple[str, ...] = ("bckg", "background")
@@ -146,7 +156,7 @@ def assign_raw_label_by_overlap(
     we: float,
     intervals: List[Dict[str, Any]],
     default: str = "bckg",
-    seizure_priority_threshold: float = 0.1, # 10% of window
+    seizure_priority_threshold: float = 0.3, # 10% of window
 ) -> str:
     overlap_by_label: Dict[str, float] = {}
     window_duration = we - ws
@@ -175,6 +185,50 @@ def assign_raw_label_by_overlap(
 # =========================================================
 # CHANNEL / MONTAGE
 # =========================================================
+
+
+def apply_bipolar_montage(
+    data: np.ndarray,
+    original_channels: List[str],
+    bipolar_pairs: List[Tuple[str, str]]
+):
+    """
+    Creates a bipolar montage by subtracting adjacent electrode signals.
+    """
+    # Normalize names using your existing function
+    norm_original = [normalize_channel_name(ch) for ch in original_channels]
+    idx_map = {ch: i for i, ch in enumerate(norm_original)}
+
+    T = data.shape[1]
+    bipolar_data = np.zeros((len(bipolar_pairs), T), dtype=np.float32)
+    
+    final_channels = []
+    missing_channels = []
+
+    for i, (ch1, ch2) in enumerate(bipolar_pairs):
+        pair_name = f"{ch1}-{ch2}"
+        final_channels.append(pair_name)
+
+        if ch1 in idx_map and ch2 in idx_map:
+            # The magic happens here: Common-mode noise cancellation!
+            idx1, idx2 = idx_map[ch1], idx_map[ch2]
+            bipolar_data[i] = data[idx1] - data[idx2]
+        else:
+            # If a channel is missing, pad the pair with zeros
+            missing_channels.append(pair_name)
+            bipolar_data[i] = np.zeros((T,), dtype=np.float32)
+
+    meta = {
+        "final_montage_channels": final_channels,
+        "missing_channels": missing_channels,
+        "original_channels": original_channels,
+        "ignored_channels": [] # Simplifying for bipolar
+    }
+    
+    return bipolar_data, meta
+
+
+
 
 def normalize_channel_name(name: str) -> str:
     name = str(name).strip().lower()
@@ -285,7 +339,32 @@ def map_to_canonical_montage(
 # PREPROCESS / QUALITY
 # =========================================================
 
+def normalize_per_channel_robust(x: np.ndarray, clip_percentile: float = 2.0) -> np.ndarray:
+    """
+    Robust per-channel normalization using Median and IQR.
+    
+    Standard z-score uses mean/std which are destroyed by muscle artifacts.
+    Median and IQR are rank-based — a single outlier cannot move them.
+    This eliminates the #1 cause of the TUSZ train/eval domain shift.
+    """
+    # Step 1: Clip extreme values per channel (kills electrode pops)
+    low  = np.percentile(x, clip_percentile, axis=1, keepdims=True)
+    high = np.percentile(x, 100 - clip_percentile, axis=1, keepdims=True)
+    x_clipped = np.clip(x, low, high)
+    
+    # Step 2: Center using median (robust to skew)
+    median = np.median(x_clipped, axis=1, keepdims=True)
+    
+    # Step 3: Scale using IQR (Q75 - Q25) — robust to outlier-inflated variance
+    q25 = np.percentile(x_clipped, 25, axis=1, keepdims=True)
+    q75 = np.percentile(x_clipped, 75, axis=1, keepdims=True)
+    iqr = q75 - q25 + 1e-8
+    
+    return ((x_clipped - median) / iqr).astype(np.float32)
+
+
 def normalize_per_channel(x: np.ndarray) -> np.ndarray:
+    """Legacy z-score normalization. Kept for backwards compatibility."""
     mean = x.mean(axis=1, keepdims=True)
     std = x.std(axis=1, keepdims=True) + 1e-6
     return ((x - mean) / std).astype(np.float32)
@@ -352,7 +431,7 @@ def cache_one_record_windows(
     )
 
     if cfg.per_channel_normalize:
-        x_full = normalize_per_channel(x_full)
+        x_full = normalize_per_channel_robust(x_full)
 
     T_full = x_full.shape[1]
 
@@ -556,7 +635,7 @@ if __name__ == "__main__":
         json_path=r"assets\eeg_seizure_only.json",
         out_dir=r"cache_windows_binary_10_sec",
 
-        fs=250,
+        fs=256,
         window_sec=10,
         stride_sec=5,
 

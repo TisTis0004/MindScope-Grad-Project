@@ -81,7 +81,7 @@ class Loader:
         transform=None,
         batch_size=32,
         shuffle=False,
-        num_workers=2,
+        num_workers=4,
         pin_memory=False,
         collate_fn=collate_xy,
         use_weighted_sampler=False,

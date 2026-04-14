@@ -101,21 +101,28 @@ class BalancedBufferEEGDataset(IterableDataset):
                     # Pop the background (we have plenty, so we discard it after using)
                     bg_sample = bg_bucket.pop(bg_idx)
                     
+                    # Read the seizure sample (do not pop yet)
+                    sz_sample = sz_bucket[sz_idx]
+                    
                     # DO NOT pop the seizure immediately! (Oversampling strategy)
                     # We have very few seizures, so we leave it in the bucket to be reused
-                    # We only pop it 10% of the time so it eventually cycles out
-                    sz_sample = sz_bucket[sz_idx]
-                    if random.random() < 0.1: 
+                    # We pop it 35% of the time so each seizure is seen ~3x (was 10% = ~10x)
+                    # Less repetition = model learns general seizure patterns, not memorized ones
+                    if random.random() < 0.35: 
                         sz_bucket.pop(sz_idx)
 
-                    # Apply transforms if you have them
-                    if self.transform is not None:
-                        bg_sample["x"] = self.transform(bg_sample["x"])
-                        sz_sample["x"] = self.transform(sz_sample["x"])
+                    # Extract the tensors to avoid mutating the dictionaries in the bucket
+                    bg_x = bg_sample["x"]
+                    sz_x = sz_sample["x"]
 
-                    # Yield them one by one. The DataLoader will batch them automatically.
-                    yield bg_sample
-                    yield sz_sample
+                    # Apply transforms if you have them on the fly
+                    if self.transform is not None:
+                        bg_x = self.transform(bg_x)
+                        sz_x = self.transform(sz_x)
+
+                    # Yield them as fresh dictionaries. The DataLoader will batch them automatically.
+                    yield {"x": bg_x, "y": bg_sample["y"]}
+                    yield {"x": sz_x, "y": sz_sample["y"]}
 
             except Exception as e:
                 print(f"Failed to load {file_path}: {e}")
@@ -133,8 +140,8 @@ class Loader:
         self,
         ds="cache_windows/manifest.jsonl",
         transform=None,
-        batch_size=32, # This will now contain roughly 16 BG and 16 SZ per batch
-        num_workers=2,
+        batch_size=64, # This will now contain roughly 32 BG and 32 SZ per batch
+        num_workers=4,
         pin_memory=True, # Highly recommended for GPU training
     ):
         # We use our new BalancedBufferDataset
