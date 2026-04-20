@@ -1,0 +1,400 @@
+{
+  "model": "EEGNet",
+  "total_windows": 30479,
+  "accuracy": 82.45,
+  "n_seizure": 6295,
+  "n_background": 24184,
+  "baseline": "mean of 200 background windows",
+  "bands": {
+    "delta": {
+      "seizure": {
+        "top_channel": "c3",
+        "top_region": "Central",
+        "top_region_pct": 78.71,
+        "top_time_segment": "Mid 3-6s",
+        "channel_mean": [
+          0.00015063,
+          0.00029649,
+          9.49e-05,
+          0.00029955,
+          0.00024794,
+          7.376e-05,
+          0.00048927,
+          0.00010565,
+          0.00035399,
+          0.00022023,
+          0.00010925,
+          0.00027379,
+          9.276e-05,
+          0.00027665,
+          0.00016251,
+          6.032e-05,
+          0.00018029
+        ],
+        "region_pct": {
+          "Frontal": 13.8,
+          "Temporal": 0.54,
+          "Central": 78.71,
+          "Parietal": 6.1,
+          "Occipital": 0.84
+        },
+        "temporal_pct": {
+          "Early 0-3s": 21.64,
+          "Mid 3-6s": 27.5,
+          "Mid-Late 6-9s": 26.56,
+          "Late 9-10s": 24.31
+        }
+      },
+      "background": {
+        "top_channel": "c4",
+        "top_region": "Central",
+        "top_region_pct": 78.47,
+        "top_time_segment": "Early 0-3s",
+        "channel_mean": [
+          0.00013954,
+          5.857e-05,
+          0.00010492,
+          0.00020007,
+          0.00012434,
+          6.019e-05,
+          0.00021439,
+          3.442e-05,
+          0.0002316,
+          0.00016702,
+          0.00015359,
+          0.00010887,
+          7.354e-05,
+          0.0001611,
+          0.0001122,
+          3.935e-05,
+          8.748e-05
+        ],
+        "region_pct": {
+          "Frontal": 8.44,
+          "Temporal": 6.76,
+          "Central": 78.47,
+          "Parietal": 6.29,
+          "Occipital": 0.03
+        },
+        "temporal_pct": {
+          "Early 0-3s": 49.13,
+          "Mid 3-6s": 19.82,
+          "Mid-Late 6-9s": 20.13,
+          "Late 9-10s": 10.92
+        }
+      }
+    },
+    "theta": {
+      "seizure": {
+        "top_channel": "c3",
+        "top_region": "Central",
+        "top_region_pct": 68.05,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          8.431e-05,
+          0.00020032,
+          6.962e-05,
+          0.00017282,
+          0.00022124,
+          6.057e-05,
+          0.00029138,
+          5.914e-05,
+          0.0002206,
+          0.00018965,
+          7.585e-05,
+          0.00017248,
+          8.454e-05,
+          0.00017006,
+          0.0001319,
+          3.246e-05,
+          0.00010406
+        ],
+        "region_pct": {
+          "Frontal": 16.57,
+          "Temporal": 5.23,
+          "Central": 68.05,
+          "Parietal": 8.85,
+          "Occipital": 1.3
+        },
+        "temporal_pct": {
+          "Early 0-3s": 19.94,
+          "Mid 3-6s": 26.24,
+          "Mid-Late 6-9s": 38.75,
+          "Late 9-10s": 15.08
+        }
+      },
+      "background": {
+        "top_channel": "c4",
+        "top_region": "Central",
+        "top_region_pct": 74.78,
+        "top_time_segment": "Early 0-3s",
+        "channel_mean": [
+          5.869e-05,
+          2.216e-05,
+          5.774e-05,
+          8.584e-05,
+          4.301e-05,
+          3.831e-05,
+          0.00011005,
+          1.866e-05,
+          0.00011472,
+          6.598e-05,
+          0.00010441,
+          5.251e-05,
+          4.638e-05,
+          8.906e-05,
+          5.603e-05,
+          2.051e-05,
+          4.378e-05
+        ],
+        "region_pct": {
+          "Frontal": 2.85,
+          "Temporal": 10.99,
+          "Central": 74.78,
+          "Parietal": 11.13,
+          "Occipital": 0.26
+        },
+        "temporal_pct": {
+          "Early 0-3s": 40.11,
+          "Mid 3-6s": 17.56,
+          "Mid-Late 6-9s": 7.48,
+          "Late 9-10s": 34.86
+        }
+      }
+    },
+    "alpha": {
+      "seizure": {
+        "top_channel": "f8",
+        "top_region": "Frontal",
+        "top_region_pct": 64.65,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          4.372e-05,
+          0.00018856,
+          2.398e-05,
+          0.00010869,
+          0.00042736,
+          3.428e-05,
+          0.00010785,
+          5.211e-05,
+          0.00015069,
+          0.00014046,
+          2.228e-05,
+          5.407e-05,
+          5.768e-05,
+          6.7e-05,
+          0.0001373,
+          2.514e-05,
+          4.047e-05
+        ],
+        "region_pct": {
+          "Frontal": 64.65,
+          "Temporal": 2.51,
+          "Central": 32.63,
+          "Parietal": 0.21,
+          "Occipital": 0.0
+        },
+        "temporal_pct": {
+          "Early 0-3s": 21.4,
+          "Mid 3-6s": 28.64,
+          "Mid-Late 6-9s": 31.42,
+          "Late 9-10s": 18.54
+        }
+      },
+      "background": {
+        "top_channel": "c3",
+        "top_region": "Central",
+        "top_region_pct": 90.25,
+        "top_time_segment": "Early 0-3s",
+        "channel_mean": [
+          5.338e-05,
+          2.03e-05,
+          3.203e-05,
+          7.199e-05,
+          2.071e-05,
+          1.976e-05,
+          0.00012275,
+          1.38e-05,
+          8.796e-05,
+          5.354e-05,
+          5.825e-05,
+          4.273e-05,
+          3.887e-05,
+          6.817e-05,
+          4.218e-05,
+          1.777e-05,
+          4.486e-05
+        ],
+        "region_pct": {
+          "Frontal": 1.41,
+          "Temporal": 0.93,
+          "Central": 90.25,
+          "Parietal": 7.16,
+          "Occipital": 0.26
+        },
+        "temporal_pct": {
+          "Early 0-3s": 46.15,
+          "Mid 3-6s": 12.33,
+          "Mid-Late 6-9s": 10.6,
+          "Late 9-10s": 30.91
+        }
+      }
+    },
+    "beta": {
+      "seizure": {
+        "top_channel": "f8",
+        "top_region": "Central",
+        "top_region_pct": 75.54,
+        "top_time_segment": "Late 9-10s",
+        "channel_mean": [
+          8.344e-05,
+          0.00012759,
+          2.974e-05,
+          0.00013261,
+          0.00022116,
+          3.441e-05,
+          0.0001733,
+          3.891e-05,
+          0.0001616,
+          0.00012017,
+          4.02e-05,
+          7.786e-05,
+          3.768e-05,
+          9.383e-05,
+          0.00010005,
+          2.423e-05,
+          6.342e-05
+        ],
+        "region_pct": {
+          "Frontal": 22.57,
+          "Temporal": 1.35,
+          "Central": 75.54,
+          "Parietal": 0.51,
+          "Occipital": 0.03
+        },
+        "temporal_pct": {
+          "Early 0-3s": 29.79,
+          "Mid 3-6s": 17.66,
+          "Mid-Late 6-9s": 14.52,
+          "Late 9-10s": 38.03
+        }
+      },
+      "background": {
+        "top_channel": "c3",
+        "top_region": "Central",
+        "top_region_pct": 93.93,
+        "top_time_segment": "Early 0-3s",
+        "channel_mean": [
+          5.547e-05,
+          3.601e-05,
+          2.487e-05,
+          9.077e-05,
+          3.942e-05,
+          1.781e-05,
+          0.00011113,
+          1.658e-05,
+          9.75e-05,
+          7.551e-05,
+          2.93e-05,
+          3.14e-05,
+          2.563e-05,
+          5.53e-05,
+          4.606e-05,
+          1.47e-05,
+          3.344e-05
+        ],
+        "region_pct": {
+          "Frontal": 2.65,
+          "Temporal": 1.91,
+          "Central": 93.93,
+          "Parietal": 1.48,
+          "Occipital": 0.03
+        },
+        "temporal_pct": {
+          "Early 0-3s": 43.25,
+          "Mid 3-6s": 11.46,
+          "Mid-Late 6-9s": 9.44,
+          "Late 9-10s": 35.85
+        }
+      }
+    },
+    "gamma": {
+      "seizure": {
+        "top_channel": "c4",
+        "top_region": "Central",
+        "top_region_pct": 82.59,
+        "top_time_segment": "Early 0-3s",
+        "channel_mean": [
+          4.949e-05,
+          3.086e-05,
+          1.199e-05,
+          6.791e-05,
+          4.078e-05,
+          1.603e-05,
+          7.068e-05,
+          1.75e-05,
+          7.481e-05,
+          6.432e-05,
+          1.619e-05,
+          2.332e-05,
+          1.572e-05,
+          3.817e-05,
+          4.176e-05,
+          1.267e-05,
+          2.787e-05
+        ],
+        "region_pct": {
+          "Frontal": 11.77,
+          "Temporal": 5.35,
+          "Central": 82.59,
+          "Parietal": 0.02,
+          "Occipital": 0.27
+        },
+        "temporal_pct": {
+          "Early 0-3s": 41.73,
+          "Mid 3-6s": 14.0,
+          "Mid-Late 6-9s": 10.23,
+          "Late 9-10s": 34.04
+        }
+      },
+      "background": {
+        "top_channel": "c3",
+        "top_region": "Central",
+        "top_region_pct": 86.7,
+        "top_time_segment": "Early 0-3s",
+        "channel_mean": [
+          3.501e-05,
+          2.922e-05,
+          1.151e-05,
+          5.832e-05,
+          3.153e-05,
+          1.113e-05,
+          7.637e-05,
+          1.007e-05,
+          6.04e-05,
+          5.424e-05,
+          1.478e-05,
+          2.026e-05,
+          1.515e-05,
+          3.087e-05,
+          2.875e-05,
+          9.25e-06,
+          1.881e-05
+        ],
+        "region_pct": {
+          "Frontal": 7.53,
+          "Temporal": 4.59,
+          "Central": 86.7,
+          "Parietal": 0.91,
+          "Occipital": 0.26
+        },
+        "temporal_pct": {
+          "Early 0-3s": 38.64,
+          "Mid 3-6s": 16.72,
+          "Mid-Late 6-9s": 11.81,
+          "Late 9-10s": 32.83
+        }
+      }
+    }
+  }
+}
