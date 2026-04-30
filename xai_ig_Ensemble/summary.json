@@ -1,0 +1,416 @@
+{
+  "model": "Ensemble (CNN-LSTM-2D + EEGNet-1D)",
+  "montage": "Double Banana (18 bipolar pairs)",
+  "xai_method": "Integrated Gradients",
+  "attribution_target": "class 1 (seizure) for all windows",
+  "ig_n_steps": 100,
+  "ensemble_weight_2d": 0.5,
+  "ensemble_weight_1d": 0.5,
+  "total_windows": 30386,
+  "ensemble_accuracy": 79.58,
+  "n_seizure": 6165,
+  "n_background": 24221,
+  "baseline": "mean of 200 background windows",
+  "bands": {
+    "delta": {
+      "seizure": {
+        "top_channel": "t6-o2",
+        "top_region": "Occipital",
+        "top_region_pct": 94.66,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          0.02868064,
+          0.02826591,
+          0.04559254,
+          0.05220509,
+          0.03005997,
+          0.04418473,
+          0.03587496,
+          0.05240585,
+          0.02589469,
+          0.02165593,
+          0.04246939,
+          0.04444505,
+          0.03067735,
+          0.01832117,
+          0.03531043,
+          0.03811174,
+          0.03592928,
+          0.01872297
+        ],
+        "region_pct": {
+          "Frontal": 0.36,
+          "Temporal": 4.41,
+          "Central": 0.0,
+          "Parietal": 0.57,
+          "Occipital": 94.66
+        },
+        "temporal_pct": {
+          "Early 0-3s": 34.74,
+          "Mid 3-6s": 9.18,
+          "Mid-Late 6-9s": 40.15,
+          "Late 9-10s": 15.93
+        }
+      },
+      "background": {
+        "top_channel": "t5-o1",
+        "top_region": "Occipital",
+        "top_region_pct": 95.53,
+        "top_time_segment": "Early 0-3s",
+        "channel_mean": [
+          0.02693413,
+          0.02743169,
+          0.04369068,
+          0.05140276,
+          0.02857274,
+          0.04213528,
+          0.03277796,
+          0.05063291,
+          0.02494729,
+          0.02105519,
+          0.03939462,
+          0.04330755,
+          0.02927475,
+          0.01768676,
+          0.03377478,
+          0.03420008,
+          0.03391018,
+          0.01750908
+        ],
+        "region_pct": {
+          "Frontal": 0.28,
+          "Temporal": 3.89,
+          "Central": 0.0,
+          "Parietal": 0.31,
+          "Occipital": 95.53
+        },
+        "temporal_pct": {
+          "Early 0-3s": 36.72,
+          "Mid 3-6s": 6.23,
+          "Mid-Late 6-9s": 33.8,
+          "Late 9-10s": 23.25
+        }
+      }
+    },
+    "theta": {
+      "seizure": {
+        "top_channel": "t3-t5",
+        "top_region": "Occipital",
+        "top_region_pct": 66.21,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          0.01822895,
+          0.01925779,
+          0.02916007,
+          0.02748191,
+          0.01408098,
+          0.02313706,
+          0.0225932,
+          0.02496895,
+          0.01347206,
+          0.01781786,
+          0.02387515,
+          0.02460647,
+          0.01712316,
+          0.01183109,
+          0.0185114,
+          0.02096906,
+          0.02330122,
+          0.01104908
+        ],
+        "region_pct": {
+          "Frontal": 0.26,
+          "Temporal": 32.39,
+          "Central": 1.01,
+          "Parietal": 0.13,
+          "Occipital": 66.21
+        },
+        "temporal_pct": {
+          "Early 0-3s": 12.99,
+          "Mid 3-6s": 5.19,
+          "Mid-Late 6-9s": 45.21,
+          "Late 9-10s": 36.61
+        }
+      },
+      "background": {
+        "top_channel": "t3-t5",
+        "top_region": "Occipital",
+        "top_region_pct": 74.72,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          0.01607257,
+          0.01872145,
+          0.02718547,
+          0.02523909,
+          0.01250342,
+          0.02055149,
+          0.01907048,
+          0.02373901,
+          0.01277716,
+          0.01685188,
+          0.02156063,
+          0.02332274,
+          0.01546975,
+          0.01104953,
+          0.01795356,
+          0.01887003,
+          0.02142895,
+          0.00953073
+        ],
+        "region_pct": {
+          "Frontal": 0.23,
+          "Temporal": 24.03,
+          "Central": 0.88,
+          "Parietal": 0.13,
+          "Occipital": 74.72
+        },
+        "temporal_pct": {
+          "Early 0-3s": 9.73,
+          "Mid 3-6s": 3.09,
+          "Mid-Late 6-9s": 44.28,
+          "Late 9-10s": 42.9
+        }
+      }
+    },
+    "alpha": {
+      "seizure": {
+        "top_channel": "t3-t5",
+        "top_region": "Temporal",
+        "top_region_pct": 85.09,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          0.03027215,
+          0.03018662,
+          0.05660868,
+          0.03549847,
+          0.02800935,
+          0.03090313,
+          0.03060776,
+          0.03105088,
+          0.02474091,
+          0.03169276,
+          0.0407605,
+          0.03625703,
+          0.03030388,
+          0.02405778,
+          0.02936918,
+          0.02562245,
+          0.03443073,
+          0.01724607
+        ],
+        "region_pct": {
+          "Frontal": 1.49,
+          "Temporal": 85.09,
+          "Central": 3.65,
+          "Parietal": 1.39,
+          "Occipital": 8.37
+        },
+        "temporal_pct": {
+          "Early 0-3s": 31.32,
+          "Mid 3-6s": 21.46,
+          "Mid-Late 6-9s": 47.09,
+          "Late 9-10s": 0.13
+        }
+      },
+      "background": {
+        "top_channel": "t3-t5",
+        "top_region": "Temporal",
+        "top_region_pct": 87.56,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          0.02744322,
+          0.02979302,
+          0.05578663,
+          0.03492787,
+          0.02643058,
+          0.02913178,
+          0.02915024,
+          0.02921176,
+          0.02461627,
+          0.03117396,
+          0.03969506,
+          0.03569525,
+          0.02957885,
+          0.02409967,
+          0.03002987,
+          0.02347274,
+          0.03368803,
+          0.0161035
+        ],
+        "region_pct": {
+          "Frontal": 0.83,
+          "Temporal": 87.56,
+          "Central": 4.86,
+          "Parietal": 1.38,
+          "Occipital": 5.38
+        },
+        "temporal_pct": {
+          "Early 0-3s": 27.65,
+          "Mid 3-6s": 23.67,
+          "Mid-Late 6-9s": 48.5,
+          "Late 9-10s": 0.18
+        }
+      }
+    },
+    "beta": {
+      "seizure": {
+        "top_channel": "fp1-f7",
+        "top_region": "Frontal",
+        "top_region_pct": 95.83,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          0.00158232,
+          0.0006703,
+          0.00101586,
+          0.00092733,
+          0.00097575,
+          0.00080601,
+          0.00066574,
+          0.00069697,
+          0.0009458,
+          0.00059354,
+          0.00075602,
+          0.00079493,
+          0.00129069,
+          0.000608,
+          0.0006943,
+          0.00082531,
+          0.00100329,
+          0.00063992
+        ],
+        "region_pct": {
+          "Frontal": 95.83,
+          "Temporal": 0.75,
+          "Central": 0.31,
+          "Parietal": 0.1,
+          "Occipital": 3.02
+        },
+        "temporal_pct": {
+          "Early 0-3s": 2.79,
+          "Mid 3-6s": 22.89,
+          "Mid-Late 6-9s": 41.39,
+          "Late 9-10s": 32.93
+        }
+      },
+      "background": {
+        "top_channel": "fp1-f7",
+        "top_region": "Frontal",
+        "top_region_pct": 97.65,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          0.0017319,
+          0.00072563,
+          0.00110415,
+          0.00101574,
+          0.00108514,
+          0.00086875,
+          0.00073215,
+          0.0007723,
+          0.00104958,
+          0.00064977,
+          0.00082369,
+          0.00088969,
+          0.00148911,
+          0.00068478,
+          0.00080369,
+          0.00088278,
+          0.00115488,
+          0.00067858
+        ],
+        "region_pct": {
+          "Frontal": 97.65,
+          "Temporal": 0.52,
+          "Central": 0.43,
+          "Parietal": 0.18,
+          "Occipital": 1.21
+        },
+        "temporal_pct": {
+          "Early 0-3s": 2.81,
+          "Mid 3-6s": 22.55,
+          "Mid-Late 6-9s": 41.55,
+          "Late 9-10s": 33.1
+        }
+      }
+    },
+    "gamma": {
+      "seizure": {
+        "top_channel": "t3-t5",
+        "top_region": "Temporal",
+        "top_region_pct": 68.58,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          0.07699039,
+          0.05853898,
+          0.09547606,
+          0.06403004,
+          0.04631478,
+          0.07197459,
+          0.07787334,
+          0.07955868,
+          0.06044796,
+          0.06318074,
+          0.05387415,
+          0.06048648,
+          0.06039915,
+          0.05113769,
+          0.06951122,
+          0.06138057,
+          0.09328088,
+          0.03935682
+        ],
+        "region_pct": {
+          "Frontal": 3.31,
+          "Temporal": 68.58,
+          "Central": 24.54,
+          "Parietal": 0.06,
+          "Occipital": 3.5
+        },
+        "temporal_pct": {
+          "Early 0-3s": 0.08,
+          "Mid 3-6s": 10.95,
+          "Mid-Late 6-9s": 60.0,
+          "Late 9-10s": 28.97
+        }
+      },
+      "background": {
+        "top_channel": "t3-t5",
+        "top_region": "Temporal",
+        "top_region_pct": 75.2,
+        "top_time_segment": "Mid-Late 6-9s",
+        "channel_mean": [
+          0.07653595,
+          0.05808439,
+          0.09659646,
+          0.06643893,
+          0.04590537,
+          0.07337863,
+          0.07925169,
+          0.08257228,
+          0.06098788,
+          0.06372248,
+          0.05504895,
+          0.06291204,
+          0.06036533,
+          0.05120718,
+          0.07054905,
+          0.06294187,
+          0.09586715,
+          0.0398707
+        ],
+        "region_pct": {
+          "Frontal": 2.04,
+          "Temporal": 75.2,
+          "Central": 18.28,
+          "Parietal": 0.26,
+          "Occipital": 4.22
+        },
+        "temporal_pct": {
+          "Early 0-3s": 0.16,
+          "Mid 3-6s": 12.76,
+          "Mid-Late 6-9s": 59.07,
+          "Late 9-10s": 28.01
+        }
+      }
+    }
+  }
+}
